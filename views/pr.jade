@@ -1,6 +1,12 @@
 extends layout
 
 block content
-  h1 Pull Request #{pr}
+  h1 Pull Request ##{pr}
 
-  p #{JSON.stringify(deps)}
+  h2 Status
+  p #{state}
+
+  h2 Dependencies
+  each dep in deps
+    h2 #{dep.name}
+    p #{JSON.stringify(dep.deps)}
