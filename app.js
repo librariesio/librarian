@@ -14,6 +14,7 @@ var redis         = require('./lib/redis');
 var debug         = require('debug')('librarian');
 var webhooks      = require('./lib/webhooks');
 var prStatus      = require('./lib/pr-status');
+var home          = require('./lib/home');
 var OAuth         = require('./lib/oauth');
 
 var app = express();
@@ -40,6 +41,8 @@ app.get('/github/callback', gh.callback.bind(gh), function(req, res) {
     });
   });
 });
+
+app.get('/', home);
 
 app.post('/webhooks/:username', webhooks);
 app.get('/repos/:owner/:repo/pull/:pr', prStatus);
