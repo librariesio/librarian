@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Your Repositories
+
+  p
+    small Your webhook is: #{webhook}
+
+  each repo in repos
+    .row
+      .col-md-4
+        p #{repo.full_name} 
+      .col-md-4
+        form(action='/webhooks', method='POST')
+          input(type='hidden', name='repo', value='#{repo.full_name}')
+          input.btn.btn-default(type='submit', value='Enable CI')

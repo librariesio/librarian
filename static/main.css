@@ -139,3 +139,7 @@ h3,h4{
     word-break: break-word;
   }
 }
+
+.row {
+  margin-bottom: 5px;
+}
