@@ -15,4 +15,11 @@ describe('Parser', function(){
     var deps = parsers.rubygems(str);
     assert.deepEqual(deps[0], ['oj', 'latest']);
   });
+
+  it('should parse (APT) dpkg -l output', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/dpkg').toString();
+    var deps = parsers.dpkg(str);
+    console.log('deps', deps);
+    assert.deepEqual(deps[0], ['accountsservice', '0.6.15-2ubuntu9.6']);
+  });
 });
