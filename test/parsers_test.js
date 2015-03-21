@@ -13,7 +13,7 @@ describe('Parser', function(){
   it('should parse composer.json', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/composer.json').toString();
     var deps = parsers.packagist(str);
-    assert(["laravel/framework", "5.0.*"], deps[0]);
+    assert.deepEqual(deps[0], ["laravel/framework", "5.0.*"]);
   });
 
   it('should parse Gemfile (naive)', function() {
