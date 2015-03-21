@@ -10,6 +10,12 @@ describe('Parser', function(){
     assert.deepEqual(deps[0], ['babel', '^4.6.6']);
   });
 
+  it('should parse composer.json', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/composer.json').toString();
+    var deps = parsers.packagist(str);
+    assert.deepEqual(deps[0], ["laravel/framework", "5.0.*"]);
+  });
+
   it('should parse bower.json', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/bower.json').toString();
     var deps = parsers.bower(str);
@@ -25,7 +31,6 @@ describe('Parser', function(){
   it('should parse (APT) dpkg -l output', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/dpkg').toString();
     var deps = parsers.dpkg(str);
-    console.log('deps', deps);
     assert.deepEqual(deps[0], ['accountsservice', '0.6.15-2ubuntu9.6']);
   });
 });
