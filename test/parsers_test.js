@@ -16,6 +16,12 @@ describe('Parser', function(){
     assert.deepEqual(deps[0], ["laravel/framework", "5.0.*"]);
   });
 
+  it('should parse bower.json', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/bower.json').toString();
+    var deps = parsers.bower(str);
+    assert.deepEqual(deps[0], ['sass-bootstrap', '~3.0.0']);
+  });
+
   it('should parse Gemfile (naive)', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/Gemfile').toString();
     var deps = parsers.rubygems(str);
