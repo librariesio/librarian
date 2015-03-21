@@ -28,6 +28,12 @@ describe('Parser', function(){
     assert.deepEqual(deps[0], ['oj', 'latest']);
   });
 
+  it('should parse Cocoapods (naive)', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/Podfile').toString();
+    var deps = parsers.cocoapods(str);
+    assert.deepEqual(deps[0], ['AFNetworking', '~> 1.0']);
+  });
+
   it('should parse (APT) dpkg -l output', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/dpkg').toString();
     var deps = parsers.dpkg(str);
