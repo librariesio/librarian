@@ -13,7 +13,7 @@ describe('Parser', function(){
   it('should parse bower.json', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/bower.json').toString();
     var deps = parsers.bower(str);
-    assert(['sass-bootstrap', '~3.0.'], deps[0]);
+    assert.deepEqual(deps[0], ['sass-bootstrap', '~3.0.0']);
   });
 
   it('should parse Gemfile (naive)', function() {
