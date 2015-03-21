@@ -21,6 +21,11 @@ describe('Parser', function(){
     var deps = parsers.bower(str);
     assert.deepEqual(deps[0], ['sass-bootstrap', '~3.0.0']);
   });
+  it('should parse pubspec.yaml', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/pubspec.yaml').toString();
+    var deps = parsers.pub(str);
+    assert.deepEqual(deps[0], ['analyzer', '>=0.22.0 <0.25.0']);
+  });
 
   it('should parse Gemfile (naive)', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/Gemfile').toString();
