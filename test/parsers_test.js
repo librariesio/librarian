@@ -16,6 +16,12 @@ describe('Parser', function(){
     assert.deepEqual(deps[0], ["laravel/framework", "5.0.*"]);
   });
 
+  it('should parse Cargo.toml', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/Cargo.toml').toString();
+    var deps = parsers.cargo(str);
+    assert.deepEqual(deps[0], ["rustc-serialize", "*"]);
+  });
+
   it('should parse bower.json', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/bower.json').toString();
     var deps = parsers.bower(str);
