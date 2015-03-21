@@ -6,7 +6,22 @@ block content
   h2 Status
   p #{state}
 
+  h2 Dependency Changes
+  each diff in diffs
+    h3 #{diff.name}
+    each d in diff.diff
+      if d.kind === 'N'
+        p Added: #{d.path} #{d.rhs}
+      if d.kind === 'D'
+        p Deleted: #{d.path} #{d.lhs}
+      if d.kind === 'E'
+        p Edited: #{d.path}, was: #{d.lhs}, is: #{d.rhs}
+
   h2 Dependencies
-  each dep in deps
-    h3 #{dep.name}
-    p #{JSON.stringify(dep.deps)}
+  h3 Base
+  each dep in baseDeps
+    p #{dep.name}: #{JSON.stringify(dep.deps)}
+
+  h3 Head
+  each dep in headDeps
+    p #{dep.name}: #{JSON.stringify(dep.deps)}
