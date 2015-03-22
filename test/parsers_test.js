@@ -33,6 +33,12 @@ describe('Parser', function(){
     assert.deepEqual(deps[0], ['analyzer', '>=0.22.0 <0.25.0']);
   });
 
+  it('should parse dub.json', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/dub.json').toString();
+    var deps = parsers.dub(str);
+    assert.deepEqual(deps[0], ['vibe-d', '~>0.7.22']);
+  });
+
   it('should parse Gemfile (naive)', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/Gemfile').toString();
     var deps = parsers.rubygems(str);
