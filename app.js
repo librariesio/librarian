@@ -30,6 +30,7 @@ app.use('/github', ghauth);
 app.get('/', router.index);
 
 app.get('/repos', router.repos);
+app.get('/repos/:owner/:repo', router.repoInfo);
 app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 
 app.post('/webhooks/:username', router.webhooks);

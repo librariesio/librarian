@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 #{repo}
+
+  h2 Dependencies
+  each dep in deps
+    p #{dep.name}: #{JSON.stringify(dep.deps)}
+
