@@ -19,11 +19,13 @@
     "express-session": "^1.10.4",
     "github-oauth": "^0.2.1",
     "jade": "^1.9.2",
+    "js-yaml": "^3.2.7",
     "octonode": "^0.6.15",
     "qs": "^2.4.1",
     "redis": "^0.12.1",
     "request": "^2.53.0",
     "serve-static": "^1.9.1",
+    "toml": "^2.2.1",
     "underscore": "^1.8.2"
   },
   "devDependencies": {
