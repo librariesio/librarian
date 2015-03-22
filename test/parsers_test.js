@@ -1,3 +1,6 @@
+
+require("babel/register");
+
 var assert  = require('assert');
 var fs = require('fs');
 
@@ -43,7 +46,9 @@ describe('Parser', function(){
     var str = fs.readFileSync(__dirname + '/fixtures/Gemfile').toString();
     var deps = parsers.rubygems(str);
     assert.deepEqual(deps[0], ['oj', 'latest']);
-    assert.deepEqual(deps[2], ['rails', '4.2.0']);
+    assert.deepEqual(deps[1], ['rails', '4.2.0']);
+    assert.deepEqual(deps[2], ['leveldb-ruby', '0.15']);
+    assert.deepEqual(deps[3], ['spring', 'latest']);
   });
 
   it('should parse Cocoapods (naive)', function() {
