@@ -1,10 +1,13 @@
 extends layout
 
 block content
-  h1 Pull Request ##{pr}
+  h1 #{pr.title} ##{pr.number}
 
   h2 Status
-  p #{state}
+  if noChanges
+    p No changes!
+  else
+    p Dependencies have been modified
 
   h2 Dependency Changes
   each diff in diffs
@@ -19,9 +22,7 @@ block content
 
   h2 Dependencies
   h3 Base
-  each dep in baseDeps
-    p #{dep.name}: #{JSON.stringify(dep.deps)}
+  p #{JSON.stringify(baseDeps)}
 
   h3 Head
-  each dep in headDeps
-    p #{dep.name}: #{JSON.stringify(dep.deps)}
+  p #{JSON.stringify(headDeps)}
