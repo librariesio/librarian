@@ -4,21 +4,22 @@ block content
   h1 #{pr.title} ##{pr.number}
 
   h2 Status
-  if noChanges
-    p No changes!
+  if changes
+    p Dependencies have been modified.
   else
-    p Dependencies have been modified
+    p No dependency changes.
 
-  h2 Dependency Changes
-  each diff in diffs
-    h3 #{diff.name}
-    each d in diff.diff
-      if d.kind === 'N'
-        p Added: #{d.path} #{d.rhs}
-      if d.kind === 'D'
-        p Deleted: #{d.path} #{d.lhs}
-      if d.kind === 'E'
-        p Edited: #{d.path}, was: #{d.lhs}, is: #{d.rhs}
+  if changes
+    h2 Dependency Changes
+    each diff in diffs
+      h3 #{diff.name}
+      each d in diff.diff
+        if d.kind === 'N'
+          p Added: #{d.path} #{d.rhs}
+        if d.kind === 'D'
+          p Deleted: #{d.path} #{d.lhs}
+        if d.kind === 'E'
+          p Edited: #{d.path}, was: #{d.lhs}, is: #{d.rhs}
 
   h2 Dependencies
   h3 Base
