@@ -21,11 +21,15 @@ describe('Repo class', function(){
 
     var get = sinon.stub();
     get.withArgs('/repos/malditogeek/hooks/branches')
-    .returns(Promise.resolve(payloads.branches));  
+    .returns(Promise.resolve(payloads.branches));
     get.withArgs('/repos/malditogeek/hooks/git/trees/9611b058b6aaa0481eb77d504f9141f06e9b52ea')
-    .returns(Promise.resolve(payloads.tree));  
+    .returns(Promise.resolve(payloads.tree));
     get.withArgs('/repos/malditogeek/hooks/git/blobs/5dc0f3906430d87bfe001089e2280b9ee4ac24c5')
-    .returns(Promise.resolve(payloads.blob));  
+    .returns(Promise.resolve(payloads.blob));
+    get.withArgs('/repos/malditogeek/hooks')
+    .returns(Promise.resolve(payloads.repo));
+    get.withArgs('/repos/malditogeek/hooks/branches/master')
+    .returns(Promise.resolve(payloads.master_branch));
 
     sinon.stub(gh, 'get', get);
 
@@ -39,9 +43,9 @@ describe('Repo class', function(){
 
   });
 
-  it('should fetch master HEAD', function(done) {
+  it('should fetch default_branch HEAD', function(done) {
     var repo = new Repo('malditogeek', 'hooks', gh);
-    return repo.fetchMaster()
+    return repo.fetchDefaultBranch()
     .then(function(sha) {
       assert.equal(sha, '9611b058b6aaa0481eb77d504f9141f06e9b52ea', "Diff sha");
     })

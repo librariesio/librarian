@@ -1,6 +1,96 @@
 /*jshint strict:true, trailing:false, unused:true, node:true */
 'use strict';
 
+var repo = {
+  "id": 31680592,
+  "name": "hooks",
+  "full_name": "malditogeek/hooks",
+  "owner": {
+    "login": "malditogeek",
+    "id": 14751,
+    "avatar_url": "https://avatars.githubusercontent.com/u/14751?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/malditogeek",
+    "html_url": "https://github.com/malditogeek",
+    "followers_url": "https://api.github.com/users/malditogeek/followers",
+    "following_url": "https://api.github.com/users/malditogeek/following{/other_user}",
+    "gists_url": "https://api.github.com/users/malditogeek/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/malditogeek/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/malditogeek/subscriptions",
+    "organizations_url": "https://api.github.com/users/malditogeek/orgs",
+    "repos_url": "https://api.github.com/users/malditogeek/repos",
+    "events_url": "https://api.github.com/users/malditogeek/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/malditogeek/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "private": false,
+  "html_url": "https://github.com/malditogeek/hooks",
+  "description": "",
+  "fork": false,
+  "url": "https://api.github.com/repos/malditogeek/hooks",
+  "forks_url": "https://api.github.com/repos/malditogeek/hooks/forks",
+  "keys_url": "https://api.github.com/repos/malditogeek/hooks/keys{/key_id}",
+  "collaborators_url": "https://api.github.com/repos/malditogeek/hooks/collaborators{/collaborator}",
+  "teams_url": "https://api.github.com/repos/malditogeek/hooks/teams",
+  "hooks_url": "https://api.github.com/repos/malditogeek/hooks/hooks",
+  "issue_events_url": "https://api.github.com/repos/malditogeek/hooks/issues/events{/number}",
+  "events_url": "https://api.github.com/repos/malditogeek/hooks/events",
+  "assignees_url": "https://api.github.com/repos/malditogeek/hooks/assignees{/user}",
+  "branches_url": "https://api.github.com/repos/malditogeek/hooks/branches{/branch}",
+  "tags_url": "https://api.github.com/repos/malditogeek/hooks/tags",
+  "blobs_url": "https://api.github.com/repos/malditogeek/hooks/git/blobs{/sha}",
+  "git_tags_url": "https://api.github.com/repos/malditogeek/hooks/git/tags{/sha}",
+  "git_refs_url": "https://api.github.com/repos/malditogeek/hooks/git/refs{/sha}",
+  "trees_url": "https://api.github.com/repos/malditogeek/hooks/git/trees{/sha}",
+  "statuses_url": "https://api.github.com/repos/malditogeek/hooks/statuses/{sha}",
+  "languages_url": "https://api.github.com/repos/malditogeek/hooks/languages",
+  "stargazers_url": "https://api.github.com/repos/malditogeek/hooks/stargazers",
+  "contributors_url": "https://api.github.com/repos/malditogeek/hooks/contributors",
+  "subscribers_url": "https://api.github.com/repos/malditogeek/hooks/subscribers",
+  "subscription_url": "https://api.github.com/repos/malditogeek/hooks/subscription",
+  "commits_url": "https://api.github.com/repos/malditogeek/hooks/commits{/sha}",
+  "git_commits_url": "https://api.github.com/repos/malditogeek/hooks/git/commits{/sha}",
+  "comments_url": "https://api.github.com/repos/malditogeek/hooks/comments{/number}",
+  "issue_comment_url": "https://api.github.com/repos/malditogeek/hooks/issues/comments{/number}",
+  "contents_url": "https://api.github.com/repos/malditogeek/hooks/contents/{+path}",
+  "compare_url": "https://api.github.com/repos/malditogeek/hooks/compare/{base}...{head}",
+  "merges_url": "https://api.github.com/repos/malditogeek/hooks/merges",
+  "archive_url": "https://api.github.com/repos/malditogeek/hooks/{archive_format}{/ref}",
+  "downloads_url": "https://api.github.com/repos/malditogeek/hooks/downloads",
+  "issues_url": "https://api.github.com/repos/malditogeek/hooks/issues{/number}",
+  "pulls_url": "https://api.github.com/repos/malditogeek/hooks/pulls{/number}",
+  "milestones_url": "https://api.github.com/repos/malditogeek/hooks/milestones{/number}",
+  "notifications_url": "https://api.github.com/repos/malditogeek/hooks/notifications{?since,all,participating}",
+  "labels_url": "https://api.github.com/repos/malditogeek/hooks/labels{/name}",
+  "releases_url": "https://api.github.com/repos/malditogeek/hooks/releases{/id}",
+  "created_at": "2015-03-04T21:23:47Z",
+  "updated_at": "2015-03-05T23:16:37Z",
+  "pushed_at": "2015-03-24T01:16:17Z",
+  "git_url": "git://github.com/malditogeek/hooks.git",
+  "ssh_url": "git@github.com:malditogeek/hooks.git",
+  "clone_url": "https://github.com/malditogeek/hooks.git",
+  "svn_url": "https://github.com/malditogeek/hooks",
+  "homepage": null,
+  "size": 554,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "language": null,
+  "has_issues": true,
+  "has_downloads": true,
+  "has_wiki": true,
+  "has_pages": false,
+  "forks_count": 0,
+  "mirror_url": null,
+  "open_issues_count": 2,
+  "forks": 0,
+  "open_issues": 2,
+  "watchers": 0,
+  "default_branch": "master",
+  "network_count": 0,
+  "subscribers_count": 1
+};
+
 var branches = [ 
   { name: 'alpha',
     commit:
@@ -64,8 +154,88 @@ var blob = { sha: '5dc0f3906430d87bfe001089e2280b9ee4ac24c5',
     encoding: 'base64' 
 };
 
+var master_branch = {
+  "name": "master",
+  "commit": {
+    "sha": "9611b058b6aaa0481eb77d504f9141f06e9b52ea",
+    "commit": {
+      "author": {
+        "name": "Mauro Pompilio",
+        "email": "hackers.are.rockstars@gmail.com",
+        "date": "2015-03-14T15:05:28Z"
+      },
+      "committer": {
+        "name": "Mauro Pompilio",
+        "email": "hackers.are.rockstars@gmail.com",
+        "date": "2015-03-14T15:05:28Z"
+      },
+      "message": "Ad package.json",
+      "tree": {
+        "sha": "c43ad3a27fdd2484e9dc492cb4f0d653b1a41016",
+        "url": "https://api.github.com/repos/malditogeek/hooks/git/trees/c43ad3a27fdd2484e9dc492cb4f0d653b1a41016"
+      },
+      "url": "https://api.github.com/repos/malditogeek/hooks/git/commits/9611b058b6aaa0481eb77d504f9141f06e9b52ea",
+      "comment_count": 0
+    },
+    "url": "https://api.github.com/repos/malditogeek/hooks/commits/9611b058b6aaa0481eb77d504f9141f06e9b52ea",
+    "html_url": "https://github.com/malditogeek/hooks/commit/9611b058b6aaa0481eb77d504f9141f06e9b52ea",
+    "comments_url": "https://api.github.com/repos/malditogeek/hooks/commits/9611b058b6aaa0481eb77d504f9141f06e9b52ea/comments",
+    "author": {
+      "login": "malditogeek",
+      "id": 14751,
+      "avatar_url": "https://avatars.githubusercontent.com/u/14751?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malditogeek",
+      "html_url": "https://github.com/malditogeek",
+      "followers_url": "https://api.github.com/users/malditogeek/followers",
+      "following_url": "https://api.github.com/users/malditogeek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malditogeek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malditogeek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malditogeek/subscriptions",
+      "organizations_url": "https://api.github.com/users/malditogeek/orgs",
+      "repos_url": "https://api.github.com/users/malditogeek/repos",
+      "events_url": "https://api.github.com/users/malditogeek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malditogeek/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "malditogeek",
+      "id": 14751,
+      "avatar_url": "https://avatars.githubusercontent.com/u/14751?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/malditogeek",
+      "html_url": "https://github.com/malditogeek",
+      "followers_url": "https://api.github.com/users/malditogeek/followers",
+      "following_url": "https://api.github.com/users/malditogeek/following{/other_user}",
+      "gists_url": "https://api.github.com/users/malditogeek/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/malditogeek/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/malditogeek/subscriptions",
+      "organizations_url": "https://api.github.com/users/malditogeek/orgs",
+      "repos_url": "https://api.github.com/users/malditogeek/repos",
+      "events_url": "https://api.github.com/users/malditogeek/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/malditogeek/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0be0b777b07336b972d64a0eedd964bf412aee05",
+        "url": "https://api.github.com/repos/malditogeek/hooks/commits/0be0b777b07336b972d64a0eedd964bf412aee05",
+        "html_url": "https://github.com/malditogeek/hooks/commit/0be0b777b07336b972d64a0eedd964bf412aee05"
+      }
+    ]
+  },
+  "_links": {
+    "self": "https://api.github.com/repos/malditogeek/hooks/branches/master",
+    "html": "https://github.com/malditogeek/hooks/tree/master"
+  }
+};
+
 module.exports = {
   branches: branches,
   tree: tree,
-  blob: blob
+  blob: blob,
+  repo: repo,
+  master_branch: master_branch
 };
