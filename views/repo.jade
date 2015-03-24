@@ -4,4 +4,12 @@ block content
   h1 #{repo}
 
   h2 Dependencies
-  p #{JSON.stringify(manifests)}
+  each manifest in manifests
+    h3 #{manifest.name}
+    p #{manifest.path} (#{manifest.sha})
+
+    h4 Dependencies
+    p #{JSON.stringify(manifest.deps)}
+
+    h4 Latest versions
+    p #{JSON.stringify(manifest.lib)}
