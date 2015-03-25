@@ -4,7 +4,7 @@
   "description": "Integrate GH webhooks with Libraries.io",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "DEBUG=librarian nodemon app.js",
     "test": "mocha"
   },
   "author": "Mauro Pompilio",

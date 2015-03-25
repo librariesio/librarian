@@ -3,6 +3,11 @@ extends layout
 block content
   h1 #{repo}
 
+  p
+    form(action='/subscribe', method='POST')
+      input(type='hidden', name='repo', value='#{repo}')
+      input.btn.btn-primary(type='submit', value='Subscribe')
+
   h2 Dependencies
   each manifest in manifests
     h3 #{manifest.name}

@@ -35,6 +35,7 @@ app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 
 app.post('/webhooks/:username', router.webhooks);
 app.post('/webhooks', router.createWebhook);
+app.post('/subscribe', router.subscribe);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
