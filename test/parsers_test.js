@@ -25,6 +25,12 @@ describe('Parser', function(){
     assert.deepEqual(deps[0], ["rustc-serialize", "*"]);
   });
 
+  it('should parse elm-package.json', function() {
+    var str = fs.readFileSync(__dirname + '/fixtures/elm-package.json').toString();
+    var deps = parsers.elm(str);
+    assert.deepEqual(deps[0], ["evancz/elm-markdown", "1.1.0 <= v < 2.0.0"]);
+  });
+
   it('should parse bower.json', function() {
     var str = fs.readFileSync(__dirname + '/fixtures/bower.json').toString();
     var deps = parsers.bower(str);
