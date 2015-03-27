@@ -1,2 +1,4 @@
-# librarian
-Libraries IO webhooks
+# Libraries CI
+
+http://ci.libraries.io
+
