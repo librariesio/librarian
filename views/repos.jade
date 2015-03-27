@@ -9,7 +9,8 @@ block content
   each repo in repos
     .row
       .col-md-4
-        p #{repo.full_name} 
+        p
+          a(href="/repos/#{repo.full_name}") #{repo.full_name}
       .col-md-4
         form(action='/webhooks', method='POST')
           input(type='hidden', name='repo', value='#{repo.full_name}')
