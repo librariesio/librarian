@@ -62,10 +62,17 @@ var platformTests = [
     platform: 'dpkg',
     manifest: 'dpkg',
     expected: [['accountsservice', '0.6.15-2ubuntu9.6']]
+  },
+  {
+    platform: 'mix',
+    manifest: 'mix.exs',
+    expected: [['poison', '~> 1.3.1']]
   }
 ];
 
 describe('Parser', function(){
+  this.timeout(5000);
+
   platformTests.forEach(function(test) {
     it('should handle '+ test.platform +' manifests', function(done) {
       var str = fs.readFileSync(__dirname + '/fixtures/' + test.manifest).toString();
