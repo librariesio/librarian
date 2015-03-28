@@ -6,66 +6,77 @@ var fs = require('fs');
 
 var parsers = require('../lib/parsers');
 
+var platformTests = [
+  {
+    platform: 'npm',
+    manifest: 'package.json',
+    expected: [['babel', '^4.6.6']]
+  },
+  {
+    platform: 'packagist',
+    manifest: 'composer.json',
+    expected: [["laravel/framework", "5.0.*"]]
+  },
+
+  {
+    platform: 'cargo',
+    manifest: 'Cargo.toml',
+    expected: [["rustc-serialize", "*"]]
+  },
+  {
+    platform: 'elm',
+    manifest: 'elm-package.json',
+    expected: [["evancz/elm-markdown", "1.1.0 <= v < 2.0.0"]]
+  },
+  {
+    platform: 'bower',
+    manifest: 'bower.json',
+    expected: [['sass-bootstrap', '~3.0.0']]
+  },
+  {
+    platform: 'pub',
+    manifest: 'pubspec.yaml',
+    expected: [['analyzer', '>=0.22.0 <0.25.0']]
+  },
+  {
+    platform: 'dub',
+    manifest: 'dub.json',
+    expected: [['vibe-d', '~>0.7.22']]
+  },
+  {
+    platform: 'rubygems',
+    manifest: 'Gemfile',
+    expected: [
+      ['oj', 'latest'],
+      ['rails', '4.2.0'],
+      ['leveldb-ruby', '0.15'],
+      ['spring', 'latest']
+    ]
+  },
+  {
+    platform: 'cocoapods',
+    manifest: 'Podfile',
+    expected: [['AFNetworking', '~> 1.0']]
+  },
+  {
+    platform: 'dpkg',
+    manifest: 'dpkg',
+    expected: [['accountsservice', '0.6.15-2ubuntu9.6']]
+  }
+];
+
 describe('Parser', function(){
-  it('should parse package.json', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/package.json').toString();
-    var deps = parsers.npm(str);
-    assert.deepEqual(deps[0], ['babel', '^4.6.6']);
-  });
-
-  it('should parse composer.json', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/composer.json').toString();
-    var deps = parsers.packagist(str);
-    assert.deepEqual(deps[0], ["laravel/framework", "5.0.*"]);
-  });
-
-  it('should parse Cargo.toml', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/Cargo.toml').toString();
-    var deps = parsers.cargo(str);
-    assert.deepEqual(deps[0], ["rustc-serialize", "*"]);
-  });
-
-  it('should parse elm-package.json', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/elm-package.json').toString();
-    var deps = parsers.elm(str);
-    assert.deepEqual(deps[0], ["evancz/elm-markdown", "1.1.0 <= v < 2.0.0"]);
-  });
-
-  it('should parse bower.json', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/bower.json').toString();
-    var deps = parsers.bower(str);
-    assert.deepEqual(deps[0], ['sass-bootstrap', '~3.0.0']);
-  });
-  it('should parse pubspec.yaml', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/pubspec.yaml').toString();
-    var deps = parsers.pub(str);
-    assert.deepEqual(deps[0], ['analyzer', '>=0.22.0 <0.25.0']);
-  });
-
-  it('should parse dub.json', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/dub.json').toString();
-    var deps = parsers.dub(str);
-    assert.deepEqual(deps[0], ['vibe-d', '~>0.7.22']);
-  });
-
-  it('should parse Gemfile (naive)', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/Gemfile').toString();
-    var deps = parsers.rubygems(str);
-    assert.deepEqual(deps[0], ['oj', 'latest']);
-    assert.deepEqual(deps[1], ['rails', '4.2.0']);
-    assert.deepEqual(deps[2], ['leveldb-ruby', '0.15']);
-    assert.deepEqual(deps[3], ['spring', 'latest']);
-  });
-
-  it('should parse Cocoapods (naive)', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/Podfile').toString();
-    var deps = parsers.cocoapods(str);
-    assert.deepEqual(deps[0], ['AFNetworking', '~> 1.0']);
-  });
-
-  it('should parse (APT) dpkg -l output', function() {
-    var str = fs.readFileSync(__dirname + '/fixtures/dpkg').toString();
-    var deps = parsers.dpkg(str);
-    assert.deepEqual(deps[0], ['accountsservice', '0.6.15-2ubuntu9.6']);
+  platformTests.forEach(function(test) {
+    it('should handle '+ test.platform +' manifests', function(done) {
+      var str = fs.readFileSync(__dirname + '/fixtures/' + test.manifest).toString();
+      parsers.parse(test.platform, str)
+      .then(function(packages) {
+        test.expected.forEach(function(pkg, i) {
+          assert.deepEqual(packages[i], pkg);
+        });
+      })
+      .then(done)
+      .catch(done);
+    });
   });
 });
