@@ -1,20 +1,24 @@
 extends layout
 
 block content
-  h1 #{repo}
+  .row
+    .col-md-8
+      h1
+        form(action='/subscribe', method='POST' class='pull-right')
+          input(type='hidden', name='repo', value='#{repo}')
+          input.btn.btn-primary(type='submit', value='Subscribe')
 
-  p
-    form(action='/subscribe', method='POST')
-      input(type='hidden', name='repo', value='#{repo}')
-      input.btn.btn-primary(type='submit', value='Subscribe')
+        span #{repo}
 
-  h2 Dependencies
-  each manifest in manifests
-    h3 #{manifest.name}
-    p #{manifest.path} (#{manifest.sha})
+      each manifest in manifests
+        h3
+          span #{manifest.name}
+          = ': '
+          a(href='https://github.com/#{repo}/blob/master/#{manifest.path}') #{manifest.path}
 
-    h4 Dependencies
-    p #{JSON.stringify(manifest.deps)}
-
-    h4 Latest versions
-    p #{JSON.stringify(manifest.lib)}
+        ul
+          each dep in Object.keys(manifest.deps)
+            li
+              a(href='http://libraries.io/#{manifest.name}/#{dep}') #{dep}
+              = ' '
+              small  #{manifest.deps[dep]}/#{manifest.lib[dep] || 'unknown'}
