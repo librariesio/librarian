@@ -64,7 +64,7 @@ var platformTests = [
     expected: [['accountsservice', '0.6.15-2ubuntu9.6']]
   },
   {
-    platform: 'mix',
+    platform: 'hex',
     manifest: 'mix.exs',
     expected: [['poison', '~> 1.3.1']]
   }
