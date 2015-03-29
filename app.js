@@ -7,6 +7,7 @@ var express      = require('express');
 var bodyParser   = require('body-parser');
 var serve_static = require('serve-static');
 var session      = require('express-session');
+var multer       = require('multer');
 var debug        = require('debug')('librarian');
 var router       = require('./lib/router');
 var ghauth       = require('./lib/oauth');
@@ -36,6 +37,7 @@ app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 app.post('/webhooks/:username', router.webhooks);
 app.post('/webhooks', router.createWebhook);
 app.post('/subscribe', router.subscribe);
+app.post('/manifests', [multer({ dest: './uploads/'}), router.parseManifests]);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
