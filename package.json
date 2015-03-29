@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Integrate GH webhooks with Libraries.io",
   "main": "app.js",
+  "engines": {
+    "node": "0.12.x"
+  },
   "scripts": {
     "start": "DEBUG=librarian nodemon app.js",
     "test": "mocha"
