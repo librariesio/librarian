@@ -3,18 +3,14 @@ extends layout
 block content
   .row
     .col-md-8
-      h1
-        form(action='/subscribe', method='POST' class='pull-right')
-          input(type='hidden', name='repo', value='#{repo}')
-          input.btn.btn-primary(type='submit', value='Subscribe')
-
-        span #{repo}
+      h1 #{repo}
 
       each manifest in manifests
         h3
           span #{manifest.name}
           = ': '
           a(href='https://github.com/#{repo}/blob/master/#{manifest.path}') #{manifest.path}
+
 
         ul
           each dep in Object.keys(manifest.deps)
