@@ -1,7 +1,12 @@
 extends layout
 
 block content
-  h1 Continuous Information
-  p For your dependencies.
-
-  a.btn.btn-primary(href="/github/login") Login with GitHub
+  .jumbotron(style="text-align:center;")
+    h1 Track your dependencies
+    h2 Login with GitHub:
+    .col-md-2.col-md-offset-4
+      h3
+        a.btn.btn-primary(href="/github/login?scope=public_repo") Public Repos
+    .col-md-2
+      h3
+        a.btn.btn-primary(href="/github/login?scope=repo") Private Repos
