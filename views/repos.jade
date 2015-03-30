@@ -3,15 +3,16 @@ extends layout
 block content
   h1 Your Repositories
 
-  p
-    small Your webhook is: #{webhook}
-
   each repo in repos
     .row
-      .col-md-4
+      .col-md-3
         p
           a(href="/repos/#{repo.full_name}") #{repo.full_name}
-      .col-md-4
+      .col-md-1
         form(action='/webhooks', method='POST')
           input(type='hidden', name='repo', value='#{repo.full_name}')
-          input.btn.btn-default(type='submit', value='Enable CI')
+          input.btn.btn-default(type='submit', value='Track')
+      .col-md-1
+        if repo.tracked
+          p ✓
+
