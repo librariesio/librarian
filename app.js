@@ -6,7 +6,7 @@ require("babel/register");
 var express      = require('express');
 var bodyParser   = require('body-parser');
 var serve_static = require('serve-static');
-var session      = require('express-session');
+var session      = require('cookie-session');
 var multer       = require('multer');
 var debug        = require('debug')('librarian');
 var router       = require('./lib/router');
@@ -20,24 +20,26 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'jade');
 app.use(serve_static('static'));
 app.use(session({
-  secret: 'teprefieroigualinternacional',
-  resave: false,
-  saveUninitialized: false
+  secret: 'teprefieroigualinternacional'
 }));
+
+var authed = function(req, res, next) {
+  return req.session.user ? next() : res.redirect('/');
+};
 
 // GitHub OAuth
 app.use('/github', ghauth);
 
 app.get('/', router.index);
 
-app.get('/repos', router.repos);
+app.get('/repos', [authed, router.repos]);
 app.get('/repos/:owner/:repo', router.repoInfo);
 app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 
 app.post('/webhooks/:username', router.webhooks);
-app.post('/webhooks', router.createWebhook);
-app.post('/subscribe', router.subscribe);
-app.post('/manifests', [multer({ dest: './uploads/'}), router.parseManifests]);
+app.post('/webhooks', [authed, router.createWebhook]);
+app.post('/subscribe', [authed, router.subscribe]);
+app.post('/manifests', [multer({dest: './uploads/'}), router.parseManifests]);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
