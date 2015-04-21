@@ -22,23 +22,23 @@ app.use(serve_static('static'));
 app.use(session({
   secret: 'teprefieroigualinternacional'
 }));
+app.disable('x-powered-by');
 
 var authed = function(req, res, next) {
   return req.session.user ? next() : res.redirect('/');
 };
 
 // GitHub OAuth
-app.use('/github', ghauth);
+//app.use('/github', ghauth);
 
 app.get('/', router.index);
 
-app.get('/repos', [authed, router.repos]);
 app.get('/repos/:owner/:repo', router.repoInfo);
 app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 
 app.post('/webhooks/:username', router.webhooks);
-app.post('/webhooks', [authed, router.createWebhook]);
-app.post('/subscribe', [authed, router.subscribe]);
+app.post('/webhooks', router.createWebhook);
+app.post('/subscribe', router.subscribe);
 app.post('/manifests', [multer({dest: './uploads/'}), router.parseManifests]);
 
 var port = process.env.PORT || 5000;
