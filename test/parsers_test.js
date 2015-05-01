@@ -47,10 +47,10 @@ var platformTests = [
     platform: 'rubygems',
     manifest: 'Gemfile',
     expected: [
-      ['oj', 'latest'],
+      ['oj', '>= 0'],
       ['rails', '4.2.0'],
       ['leveldb-ruby', '0.15'],
-      ['spring', 'latest']
+      ['spring', '>= 0']
     ]
   },
   {
