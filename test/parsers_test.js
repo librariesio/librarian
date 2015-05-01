@@ -54,6 +54,16 @@ var platformTests = [
     ]
   },
   {
+    platform: 'rubygems',
+    manifest: 'gems.rb',
+    expected: [
+      ['oj', 'latest'],
+      ['rails', '4.2.0'],
+      ['leveldb-ruby', '0.15'],
+      ['spring', 'latest']
+    ]
+  },
+  {
     platform: 'cocoapods',
     manifest: 'Podfile',
     expected: [['AFNetworking', '~> 1.0']]
