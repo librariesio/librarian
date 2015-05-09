@@ -31,7 +31,7 @@ var platformTests = [
   {
     platform: 'bower',
     manifest: 'bower.json',
-    expected: [['sass-bootstrap', '~3.0.0']]
+    expected: [['jquery', '>= 1.9.1']]
   },
   {
     platform: 'pub',
