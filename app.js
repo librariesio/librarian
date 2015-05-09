@@ -8,6 +8,7 @@ var bodyParser   = require('body-parser');
 var serve_static = require('serve-static');
 var session      = require('cookie-session');
 var multer       = require('multer');
+var bugsnag      = require('bugsnag');
 var debug        = require('debug')('librarian');
 var router       = require('./lib/router');
 var ghauth       = require('./lib/oauth');
@@ -23,6 +24,8 @@ app.use(session({
   secret: 'teprefieroigualinternacional'
 }));
 app.disable('x-powered-by');
+
+bugsnag.register("b9d5d0c5b9ecdcf14731645900d4f5be");
 
 var authed = function(req, res, next) {
   return req.session.user ? next() : res.redirect('/');
