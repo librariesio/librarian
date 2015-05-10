@@ -17,7 +17,11 @@ var platformTests = [
     manifest: 'composer.json',
     expected: [["laravel/framework", "5.0.*"]]
   },
-
+  {
+    platform: 'packagist',
+    manifest: 'composer2.json',
+    expected: [[]]
+  },
   {
     platform: 'cargo',
     manifest: 'Cargo.toml',
