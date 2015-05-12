@@ -69,8 +69,8 @@ var platformTests = [
     fixture: 'Gemfile',
     expected: [
       ['oj', '>= 0'],
-      ['rails', '4.2.0'],
-      ['leveldb-ruby', '0.15'],
+      ['rails', '= 4.2.0'],
+      ['leveldb-ruby', '= 0.15'],
       ['spring', '>= 0']
     ],
     validManifestPaths: ['Gemfile'],
@@ -81,8 +81,8 @@ var platformTests = [
     fixture: 'gems.rb',
     expected: [
       ['oj', '>= 0'],
-      ['rails', '4.2.0'],
-      ['leveldb-ruby', '0.15'],
+      ['rails', '= 4.2.0'],
+      ['leveldb-ruby', '= 0.15'],
       ['spring', '>= 0']
     ],
     validManifestPaths: ['gems.rb'],
