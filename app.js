@@ -13,19 +13,21 @@ var debug        = require('debug')('librarian');
 var router       = require('./lib/router');
 var ghauth       = require('./lib/oauth');
 
+bugsnag.register("b9d5d0c5b9ecdcf14731645900d4f5be");
+
 var app = express();
+app.use(bugsnag.requestHandler);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ 
-  extended: true 
+app.use(bodyParser.urlencoded({
+  extended: true
 }));
 app.set('view engine', 'jade');
 app.use(serve_static('static'));
 app.use(session({
   secret: 'teprefieroigualinternacional'
 }));
+app.use(bugsnag.errorHandler);
 app.disable('x-powered-by');
-
-bugsnag.register("b9d5d0c5b9ecdcf14731645900d4f5be");
 
 var authed = function(req, res, next) {
   return req.session.user ? next() : res.redirect('/');
