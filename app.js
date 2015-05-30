@@ -45,9 +45,6 @@ if (cluster.isMaster) {
   
   app.get('/', router.index);
   app.get('/repos/:owner/:repo', router.repoInfo);
-  app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
-  app.post('/webhooks/:username', router.webhooks);
-  app.post('/webhooks', router.createWebhook);
   app.post('/manifests', [multer({dest: './uploads/'}), router.parseManifests]);
   
   app.use(bugsnag.errorHandler);
