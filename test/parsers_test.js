@@ -108,7 +108,15 @@ var platformTests = [
     expected: [['poison', '~> 1.3.1']],
     validManifestPaths: ['mix.exs'],
     invalidManifestPaths: []
+  },
+  {
+    platform: 'pip',
+    fixture: 'requeriments.txt',
+    expected: [['Flask', '0.8']],
+    validManifestPaths: ['requeriments.txt'],
+    invalidManifestPaths: []
   }
+
 ];
 
 describe('Parser', function(){
