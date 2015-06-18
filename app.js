@@ -22,8 +22,15 @@ app.use(serve_static('static'));
 app.use(session({secret: 'teprefieroigualinternacional'}));
 app.disable('x-powered-by');
 
+app.use(function(req, res, next) {
+  res.set('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.get('/', router.index);
 app.get('/repos/:owner/:repo', router.repoInfo);
+app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
+
 
 // File uploads parser
 //var multer = require('multer');
