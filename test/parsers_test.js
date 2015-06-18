@@ -111,9 +111,9 @@ var platformTests = [
   },
   {
     platform: 'pip',
-    fixture: 'requeriments.txt',
+    fixture: 'requirements.txt',
     expected: [['Flask', '0.8']],
-    validManifestPaths: ['requeriments.txt'],
+    validManifestPaths: ['requirements.txt'],
     invalidManifestPaths: []
   }
 
