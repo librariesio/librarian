@@ -110,7 +110,7 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
-    platform: 'pip',
+    platform: 'pypi',
     fixture: 'requirements.txt',
     expected: [['Flask', '0.8']],
     validManifestPaths: ['requirements.txt'],
