@@ -77,6 +77,16 @@ var platformTests = [
     invalidManifestPaths: ['bundle/foo/Gemfile']
   },
   {
+    platform: 'rubygemslockfile',
+    fixture: 'Gemfile.lock',
+    expected: [
+      ['CFPropertyList', '2.3.1'],
+      ['actionmailer', '4.2.3']
+    ],
+    validManifestPaths: ['Gemfile.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'rubygems',
     fixture: 'gems.rb',
     expected: [
