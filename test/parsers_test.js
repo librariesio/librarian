@@ -15,6 +15,13 @@ var platformTests = [
     invalidManifestPaths: ['node_modules/foo/package.json']
   },
   {
+    platform: 'npmshrinkwrap',
+    fixture: 'npm-shrinkwrap.json',
+    expected: [['babel', '4.7.16']],
+    validManifestPaths: ['npm-shrinkwrap.json'],
+    invalidManifestPaths: ['node_modules/foo/npm-shrinkwrap.json']
+  },
+  {
     platform: 'packagist',
     fixture: 'composer.json',
     expected: [["laravel/framework", "5.0.*"]],
