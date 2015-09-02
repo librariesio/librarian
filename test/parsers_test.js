@@ -129,7 +129,12 @@ var platformTests = [
   {
     platform: 'pypi',
     fixture: 'requirements.txt',
-    expected: [['Flask', '0.8']],
+    expected: [
+      ['Flask', '0.8'],
+      ['zope.component', '4.2.2'],
+      ['scikit-learn', '0.16.1'],
+      ['Beaker', '1.6.5']
+    ],
     validManifestPaths: ['requirements.txt'],
     invalidManifestPaths: []
   }
