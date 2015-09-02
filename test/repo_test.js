@@ -101,4 +101,15 @@ describe('Repo class', function(){
     .catch(done);
   });
 
+  it('should find metadata', function(done) {
+    var repo = new Repo('malditogeek', 'hooks', gh);
+    return repo.findMetadata()
+    .then(function(metadata) {
+      assert.deepEqual(Object.keys(metadata), ['readme'], "Missing metadata");
+    })
+    .then(done)
+    .catch(done);
+  });
+
+
 });
