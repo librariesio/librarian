@@ -94,6 +94,16 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'gemspec',
+    fixture: 'devise.gemspec',
+    expected: [
+      ['warden', '~> 1.2.3'],
+      ['orm_adapter', '~> 0.1']
+    ],
+    validManifestPaths: ['devise.gemspec', 'foo_meh-bar.gemspec'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'rubygems',
     fixture: 'gems.rb',
     expected: [
