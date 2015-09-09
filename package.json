@@ -5,7 +5,7 @@
   "repository": "https://github.com/librariesio/librarian",
   "main": "app.js",
   "engines": {
-    "iojs": "2.2.x"
+    "node": "4.0.x"
   },
   "scripts": {
     "start": "node app.js",
