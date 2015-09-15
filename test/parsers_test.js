@@ -50,6 +50,13 @@ var platformTests = [
     invalidManifestPaths: ['node_modules/foo/elm-package.json']
   },
   {
+    platform: 'elm',
+    fixture: 'elm_dependencies.json',
+    expected: [["johnpmayer/elm-webgl", "0.1.1"]],
+    validManifestPaths: ['elm_dependencies.json'],
+    invalidManifestPaths: ['node_modules/foo/elm_dependencies.json']
+  },
+  {
     platform: 'bower',
     fixture: 'bower.json',
     expected: [['jquery', '>= 1.9.1']],
