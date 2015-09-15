@@ -36,6 +36,16 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'packagistlockfile',
+    fixture: 'composer.lock',
+    expected: [
+      ['doctrine/annotations', 'v1.2.1'],
+      ['doctrine/cache', 'v1.3.1']
+    ],
+    validManifestPaths: ['composer.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'cargo',
     fixture: 'Cargo.toml',
     expected: [["rustc-serialize", "*"]],
