@@ -130,6 +130,13 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'cocoapodsLockfile',
+    fixture: 'Podfile.lock',
+    expected: [['Alamofire', '2.0.1']],
+    validManifestPaths: ['Podfile.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'dpkg',
     fixture: 'dpkg',
     expected: [['accountsservice', '0.6.15-2ubuntu9.6']],
