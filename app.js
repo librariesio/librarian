@@ -11,10 +11,16 @@ var bugsnag      = require('bugsnag');
 var debug        = require('debug')('librarian');
 var router       = require('./lib/router');
 
-bugsnag.register("b9d5d0c5b9ecdcf14731645900d4f5be");
 
 var app = express();
-app.use(bugsnag.requestHandler);
+var isProduction = app.get('env') === 'production';
+var port = process.env.PORT || 5000;
+
+// Middlewares
+if (isProduction) {
+  bugsnag.register("b9d5d0c5b9ecdcf14731645900d4f5be");
+  app.use(bugsnag.requestHandler);
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'jade');
@@ -27,6 +33,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Routes
 app.get('/', router.index);
 app.get('/repos/:owner/:repo', router.repoInfo);
 app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
@@ -36,14 +43,13 @@ app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 //var multer = require('multer');
 //app.post('/manifests', [multer({dest: './uploads/'}), router.parseManifests]);
 
-app.use(bugsnag.errorHandler);
+// Error handling
+if (isProduction) app.use(bugsnag.errorHandler);
 app.use(function(err, req, res, next) {
   console.error('ERR', err);
   res.status(500).send({error: 'Something went wrong.'});
 });
 
-
-var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log('Listening on', port);
 
@@ -51,9 +57,9 @@ app.listen(port, function() {
     console.log('leak:', info);
   });
   
-  memwatch.on('stats', function(stats) {
-    console.log('stats:', stats);
-  });
+  //memwatch.on('stats', function(stats) {
+  //  console.log('stats:', stats);
+  //});
   
   setInterval(memwatch.gc, 60000);
 });
