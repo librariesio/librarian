@@ -36,6 +36,16 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'packagistlockfile',
+    fixture: 'composer.lock',
+    expected: [
+      ['doctrine/annotations', 'v1.2.1'],
+      ['doctrine/cache', 'v1.3.1']
+    ],
+    validManifestPaths: ['composer.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'cargo',
     fixture: 'Cargo.toml',
     expected: [["rustc-serialize", "*"]],
@@ -48,6 +58,13 @@ var platformTests = [
     expected: [["evancz/elm-markdown", "1.1.0 <= v < 2.0.0"]],
     validManifestPaths: ['elm-package.json'],
     invalidManifestPaths: ['node_modules/foo/elm-package.json']
+  },
+  {
+    platform: 'elm',
+    fixture: 'elm_dependencies.json',
+    expected: [["johnpmayer/elm-webgl", "0.1.1"]],
+    validManifestPaths: ['elm_dependencies.json'],
+    invalidManifestPaths: ['node_modules/foo/elm_dependencies.json']
   },
   {
     platform: 'bower',
