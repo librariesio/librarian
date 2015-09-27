@@ -46,6 +46,16 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'julia',
+    fixture: 'REQUIRE',
+    expected: [
+      ["julia", "0.3"],
+      ["Codecs", ">= 0"]
+    ],
+    validManifestPaths: ['REQUIRE'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'cargo',
     fixture: 'Cargo.toml',
     expected: [["rustc-serialize", "*"]],
