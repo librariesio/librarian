@@ -10,28 +10,35 @@ var platformTests = [
   {
     platform: 'npm',
     fixture: 'package.json',
-    expected: [['babel', '^4.6.6']],
+    expected: [
+      {name: 'babel', version: '^4.6.6', type: 'runtime'},
+      {name: 'mocha', version: '^2.2.1', type: 'development'}
+    ],
     validManifestPaths: ['package.json'],
     invalidManifestPaths: ['node_modules/foo/package.json']
   },
   {
     platform: 'npmshrinkwrap',
     fixture: 'npm-shrinkwrap.json',
-    expected: [['babel', '4.7.16']],
+    expected: [
+      {name: 'babel', version: '4.7.16', type: 'runtime'}
+    ],
     validManifestPaths: ['npm-shrinkwrap.json'],
     invalidManifestPaths: ['node_modules/foo/npm-shrinkwrap.json']
   },
   {
     platform: 'packagist',
     fixture: 'composer.json',
-    expected: [["laravel/framework", "5.0.*"]],
+    expected: [
+      {name: "laravel/framework", version: "5.0.*", type: 'runtime'}
+    ],
     validManifestPaths: ['composer.json'],
     invalidManifestPaths: []
   },
   {
     platform: 'packagist',
     fixture: 'composer2.json',
-    expected: [[]],
+    expected: [],
     validManifestPaths: [],
     invalidManifestPaths: []
   },
@@ -183,6 +190,7 @@ describe('Parser', function(){
       var str = fs.readFileSync(__dirname +'/fixtures/'+ test.fixture).toString();
       parsers.parse(test.platform, str)
       .then(function(packages) {
+        console.log('packages', packages);
         test.expected.forEach(function(pkg, i) {
           assert.deepEqual(packages[i], pkg);
         });
@@ -194,7 +202,7 @@ describe('Parser', function(){
     it('should match valid '+ test.platform +' manifest paths', function() {
       test.validManifestPaths.forEach(function(path) {
         var platform = parsers.findPlatform(path);
-        assert.equal(test.platform, platform);
+        assert(platform);
       });
     });
 

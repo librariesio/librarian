@@ -47,6 +47,7 @@ app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 if (isProduction) app.use(bugsnag.errorHandler);
 app.use(function(err, req, res, next) {
   console.error('ERR', err);
+  console.error('STACK:', err.stack);
   res.status(500).send({error: 'Something went wrong.'});
 });
 
