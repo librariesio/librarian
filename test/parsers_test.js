@@ -36,6 +36,13 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'platformio',
+    fixture: 'platformio.ini',
+    expected: [[28, '>= 0']],
+    validManifestPaths: ['platformio.ini'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'meteor',
     fixture: 'versions.json',
     expected: [["accounts-base", "1.1.2"]],
