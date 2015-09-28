@@ -29,6 +29,13 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'maven',
+    fixture: 'pom.xml',
+    expected: [["org.hibernate/hibernate-core", "5.0.1.Final"]],
+    validManifestPaths: ['pom.xml'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'packagist',
     fixture: 'composer2.json',
     expected: [[]],
