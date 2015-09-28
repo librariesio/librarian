@@ -107,7 +107,7 @@ var platformTests = [
       ['leveldb-ruby', '= 0.15'],
       ['spring', '>= 0']
     ],
-    validManifestPaths: ['Gemfile'],
+    validManifestPaths: ['Gemfile', 'gems.rb'],
     invalidManifestPaths: ['bundle/foo/Gemfile']
   },
   {
@@ -117,7 +117,7 @@ var platformTests = [
       ['CFPropertyList', '2.3.1'],
       ['actionmailer', '4.2.3']
     ],
-    validManifestPaths: ['Gemfile.lock'],
+    validManifestPaths: ['Gemfile.lock', 'gems.locked'],
     invalidManifestPaths: []
   },
   {
