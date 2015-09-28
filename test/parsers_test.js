@@ -135,7 +135,7 @@ var platformTests = [
   {
     platform: 'cocoapods',
     fixture: 'Podfile',
-    expected: [['AFNetworking', '~> 1.0']],
+    expected: [['Artsy-UIButtons', '>= 0']],
     validManifestPaths: ['Podfile'],
     invalidManifestPaths: []
   },
