@@ -36,6 +36,13 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'nuspec',
+    fixture: 'example.nuspec',
+    expected: [["FubuCore","3.2.0.3001"]],
+    validManifestPaths: ['example.nuspec'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'meteor',
     fixture: 'versions.json',
     expected: [["accounts-base", "1.1.2"]],
