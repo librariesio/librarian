@@ -171,6 +171,20 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'nuget',
+    fixture: 'Project.json',
+    expected: [["Microsoft.AspNet.Server.Kestrel","1.0.0-beta7"]],
+    validManifestPaths: ['Project.json'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'nugetLockfile',
+    fixture: 'Project.lock.json',
+    expected: [["AutoMapper","4.0.0-alpha1"]],
+    validManifestPaths: ['Project.lock.json'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'dpkg',
     fixture: 'dpkg',
     expected: [['accountsservice', '0.6.15-2ubuntu9.6']],
