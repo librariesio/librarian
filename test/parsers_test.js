@@ -138,6 +138,16 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'nimble',
+    fixture: 'example.nimble',
+    expected: [
+      ['warden', '~> 1.2.3'],
+      ['orm_adapter', '~> 0.1']
+    ],
+    validManifestPaths: ['foobar.nimble', 'foo_meh-bar.nimble'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'rubygems',
     fixture: 'gems.rb',
     expected: [
