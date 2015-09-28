@@ -36,6 +36,13 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'meteor',
+    fixture: 'versions.json',
+    expected: [["accounts-base", "1.1.2"]],
+    validManifestPaths: ['versions.json'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'packagistlockfile',
     fixture: 'composer.lock',
     expected: [
