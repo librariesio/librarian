@@ -96,8 +96,6 @@ var platformTests = [
     validManifestPaths: ['composer.lock'],
     invalidManifestPaths: []
   },
-
-
   {
     platform: 'cargo',
     fixture: 'Cargo.toml',
@@ -110,17 +108,22 @@ var platformTests = [
   {
     platform: 'elm',
     fixture: 'elm-package.json',
-    expected: [["evancz/elm-markdown", "1.1.0 <= v < 2.0.0"]],
+    expected: [
+      {name: "evancz/elm-markdown", version: "1.1.0 <= v < 2.0.0", type: 'runtime'}
+    ],
     validManifestPaths: ['elm-package.json'],
     invalidManifestPaths: ['node_modules/foo/elm-package.json']
   },
   {
     platform: 'elm',
     fixture: 'elm_dependencies.json',
-    expected: [["johnpmayer/elm-webgl", "0.1.1"]],
+    expected: [
+      {name: "johnpmayer/elm-webgl", version: "0.1.1", type: 'runtime'}
+    ],
     validManifestPaths: ['elm_dependencies.json'],
     invalidManifestPaths: ['node_modules/foo/elm_dependencies.json']
   },
+
   {
     platform: 'bower',
     fixture: 'bower.json',
