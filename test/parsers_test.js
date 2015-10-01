@@ -123,14 +123,17 @@ var platformTests = [
     validManifestPaths: ['elm_dependencies.json'],
     invalidManifestPaths: ['node_modules/foo/elm_dependencies.json']
   },
-
   {
     platform: 'bower',
     fixture: 'bower.json',
-    expected: [['jquery', '>= 1.9.1']],
+    expected: [
+      {name: 'jquery', version: '>= 1.9.1', type: 'runtime'}
+    ],
     validManifestPaths: ['bower.json'],
     invalidManifestPaths: ['node_modules/foo/bower.json']
   },
+
+
   {
     platform: 'pub',
     fixture: 'pubspec.yaml',
