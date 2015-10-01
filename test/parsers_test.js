@@ -132,6 +132,17 @@ var platformTests = [
     validManifestPaths: ['bower.json'],
     invalidManifestPaths: ['node_modules/foo/bower.json']
   },
+  {
+    platform: 'dub',
+    fixture: 'dub.json',
+    expected: [
+      {name: 'vibe-d', version: '~>0.7.22', type: 'runtime'},
+      {name: 'libdparse', version: "~>0.2.0", type: 'optional'}
+    ],
+    validManifestPaths: ['dub.json'],
+    invalidManifestPaths: []
+  },
+
 
 
   {
@@ -141,13 +152,6 @@ var platformTests = [
     validManifestPaths: ['pubspec.yaml'],
     invalidManifestPaths: []
 
-  },
-  {
-    platform: 'dub',
-    fixture: 'dub.json',
-    expected: [['vibe-d', '~>0.7.22']],
-    validManifestPaths: ['dub.json'],
-    invalidManifestPaths: []
   },
   {
     platform: 'cocoapods',
