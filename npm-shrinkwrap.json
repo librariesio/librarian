@@ -1158,7 +1158,7 @@
     },
     "ioredis": {
       "version": "1.9.0",
-      "from": "ioredis@*",
+      "from": "ioredis@>=1.9.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/ioredis/-/ioredis-1.9.0.tgz",
       "dependencies": {
         "double-ended-queue": {
@@ -1561,7 +1561,7 @@
     },
     "parse-link-header": {
       "version": "0.4.1",
-      "from": "parse-link-header@*",
+      "from": "parse-link-header@>=0.4.1 <0.5.0",
       "resolved": "https://registry.npmjs.org/parse-link-header/-/parse-link-header-0.4.1.tgz",
       "dependencies": {
         "xtend": {
@@ -1586,14 +1586,6 @@
       "from": "request-promise@>=0.4.3 <0.5.0",
       "resolved": "https://registry.npmjs.org/request-promise/-/request-promise-0.4.3.tgz",
       "dependencies": {
-<<<<<<< HEAD
-        "bluebird": {
-          "version": "2.10.1",
-          "from": "bluebird@>=2.3.0 <3.0.0",
-          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-2.10.1.tgz"
-        },
-=======
->>>>>>> extended
         "chalk": {
           "version": "1.1.1",
           "from": "chalk@>=1.1.0 <2.0.0",
@@ -1797,11 +1789,7 @@
                 },
                 "boom": {
                   "version": "2.9.0",
-<<<<<<< HEAD
-                  "from": "boom@>=2.0.0 <3.0.0",
-=======
                   "from": "boom@>=2.8.0 <3.0.0",
->>>>>>> extended
                   "resolved": "https://registry.npmjs.org/boom/-/boom-2.9.0.tgz"
                 },
                 "cryptiles": {
