@@ -177,7 +177,6 @@ var platformTests = [
   },
 
 
-
   {
     platform: 'cocoapods',
     fixture: 'Podfile',
@@ -191,14 +190,18 @@ var platformTests = [
     expected: [['Alamofire', '2.0.1']],
     validManifestPaths: ['Podfile.lock'],
     invalidManifestPaths: []
-  },
-  {
-    platform: 'dpkg',
-    fixture: 'dpkg',
-    expected: [['accountsservice', '0.6.15-2ubuntu9.6']],
-    validManifestPaths: ['dpkg'],
-    invalidManifestPaths: []
-  },
+  }
+
+
+  // DISABLED
+
+  //{
+  //  platform: 'dpkg',
+  //  fixture: 'dpkg',
+  //  expected: [['accountsservice', '0.6.15-2ubuntu9.6']],
+  //  validManifestPaths: ['dpkg'],
+  //  invalidManifestPaths: []
+  //}
 
 ];
 

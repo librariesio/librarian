@@ -1,4 +1,3 @@
-/*jshint strict:true, trailing:false, unused:true, node:true */
 'use strict';
 
 require("babel/register");
@@ -6,18 +5,19 @@ require("babel/register");
 var assert = require('assert');
 var GitHub = require('../lib/github');
 var Repo = require('../lib/repo');
+var parsers = require('../lib/parsers').parsers;
 var sinon = require('sinon');
 var payloads = require('./fixtures/github-payloads');
 
 describe('Repo class', function(){
 
-  var gh, hooksManifest;
+  var GH, EXPECTED_PATH, EXPECTED_SHA;
 
   beforeEach(function() {
 
     // Stub GH API
 
-    gh = new GitHub();
+    GH = new GitHub();
 
     var get = sinon.stub();
     get.withArgs('/repos/malditogeek/hooks/branches')
@@ -31,20 +31,16 @@ describe('Repo class', function(){
     get.withArgs('/repos/malditogeek/hooks/branches/master')
     .returns(Promise.resolve(payloads.master_branch));
 
-    sinon.stub(gh, 'get', get);
+    sinon.stub(GH, 'get', get);
 
     // Sample repo manifest
 
-    hooksManifest = [{
-      name: 'npm',
-      path: 'package.json',
-      sha: '5dc0f3906430d87bfe001089e2280b9ee4ac24c5'
-    }];
-
+    EXPECTED_PATH = 'package.json';
+    EXPECTED_SHA  = '5dc0f3906430d87bfe001089e2280b9ee4ac24c5';
   });
 
   it('should fetch default_branch HEAD', function(done) {
-    var repo = new Repo('malditogeek', 'hooks', gh);
+    var repo = new Repo('malditogeek', 'hooks', GH);
     return repo.fetchDefaultBranch()
     .then(function(sha) {
       assert.equal(sha, '9611b058b6aaa0481eb77d504f9141f06e9b52ea', "Diff sha");
@@ -54,55 +50,112 @@ describe('Repo class', function(){
   });
 
   it('should find manifests at a given SHA', function(done) {
-    var repo = new Repo('malditogeek', 'hooks', gh);
+    var repo = new Repo('malditogeek', 'hooks', GH);
+
+    var expected = [
+      {
+        path: 'package.json',
+        sha: '5dc0f3906430d87bfe001089e2280b9ee4ac24c5',
+        platform: parsers.npm
+      }
+    ];
+
     return repo.findManifestsAt('9611b058b6aaa0481eb77d504f9141f06e9b52ea')
     .then(function(manifests) {
-      assert.deepEqual(manifests, hooksManifest, "Manifests don't match");
+      assert.deepEqual(manifests, expected, "Manifests don't match");
     })
     .then(done)
     .catch(done);
   });
 
   it('should fetch blobs given a manifest', function(done) {
-    hooksManifest[0].blob = payloads.blob;
 
-    var repo = new Repo('malditogeek', 'hooks', gh);
-    return repo.fetchBlobs(hooksManifest)
+    var input = [
+      {
+        path: 'package.json',
+        sha: '5dc0f3906430d87bfe001089e2280b9ee4ac24c5',
+        platform: parsers.npm,
+      }
+    ];
+
+    var expected = [
+      {
+        path: 'package.json',
+        sha: '5dc0f3906430d87bfe001089e2280b9ee4ac24c5',
+        platform: parsers.npm,
+        blob: payloads.blob
+      }
+    ];
+
+    var repo = new Repo('malditogeek', 'hooks', GH);
+    return repo.fetchBlobs(input)
     .then(function(blobs) {
-      assert.deepEqual(blobs, hooksManifest, "Blobs don't match");
+      assert.deepEqual(blobs, expected, "Blobs don't match");
     })
     .then(done)
     .catch(done);
   });
 
   it('should be able to parse blobs', function(done) {
-    hooksManifest[0].blob = payloads.blob;
-    hooksManifest[0].deps = {octonode: '^0.6.15', 'node-gitter': '^1.2.7'};
 
-    var repo = new Repo('malditogeek', 'hooks', gh);
-    return repo.parseBlobs(hooksManifest)
-    .then(function(deps) {
-      delete hooksManifest.blob;
-      assert.deepEqual(deps, hooksManifest, "Deps don't match");
+    var input = [
+      {
+        path:         EXPECTED_PATH,
+        sha:          EXPECTED_SHA,
+        platform:     parsers.npm,
+        blob:         payloads.blob,
+      }
+    ];
+
+    var expected = [
+      {
+        path:         EXPECTED_PATH,
+        sha:          EXPECTED_SHA,
+        platform:     parsers.npm,
+        blob:         payloads.blob,
+        dependencies: [
+          {name: 'octonode', version: '^0.6.15', type: 'runtime'},
+          {name: 'node-gitter', version: '^1.2.7', type: 'runtime'}
+        ]
+      }
+    ];
+
+
+    var repo = new Repo('malditogeek', 'hooks', GH);
+    return repo.parseBlobs(input)
+    .then(function(parsed) {
+      assert.deepEqual(parsed, expected, "Deps don't match");
     })
     .then(done)
     .catch(done);
   });
 
   it('should find dependencies', function(done) {
-    hooksManifest[0].deps = {octonode: '^0.6.15', 'node-gitter': '^1.2.7'};
 
-    var repo = new Repo('malditogeek', 'hooks', gh);
+    var expected = [
+      {
+        platform:     parsers.npm.name,
+        type:         parsers.npm.type,
+        filepath:     EXPECTED_PATH,
+        sha:          EXPECTED_SHA,
+        dependencies: [
+          {name: 'octonode', version: '^0.6.15', type: 'runtime'},
+          {name: 'node-gitter', version: '^1.2.7', type: 'runtime'}
+        ]
+      }
+    ];
+
+    var repo = new Repo('malditogeek', 'hooks', GH);
     return repo.findDependencies()
     .then(function(dependencies) {
-      assert.deepEqual(dependencies, hooksManifest, "Deps don't match");
+      assert.deepEqual(dependencies, expected, "Deps don't match");
     })
     .then(done)
     .catch(done);
   });
 
   it('should find metadata', function(done) {
-    var repo = new Repo('malditogeek', 'hooks', gh);
+    var repo = new Repo('malditogeek', 'hooks', GH);
     return repo.findMetadata()
     .then(function(metadata) {
       assert.deepEqual(Object.keys(metadata), ['readme'], "Missing metadata");
