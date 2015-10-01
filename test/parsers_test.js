@@ -27,6 +27,50 @@ var platformTests = [
     invalidManifestPaths: ['node_modules/foo/npm-shrinkwrap.json']
   },
   {
+    platform: 'rubygems',
+    fixture: 'Gemfile',
+    expected: [
+      {name: 'oj', version: '>= 0', type: 'runtime'},
+      {name: 'rails', version: '= 4.2.0', type: 'runtime'},
+      {name: 'leveldb-ruby', version: '= 0.15', type: 'runtime'},
+      {name: 'spring', version: '>= 0', type: 'development'}
+    ],
+    validManifestPaths: ['Gemfile'],
+    invalidManifestPaths: ['bundle/foo/Gemfile']
+  },
+  {
+    platform: 'rubygemslockfile',
+    fixture: 'Gemfile.lock',
+    expected: [
+      {name:'CFPropertyList', version: '2.3.1', type: 'runtime'},
+      {name:'actionmailer', version: '4.2.3', type: 'runtime'}
+    ],
+    validManifestPaths: ['Gemfile.lock'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'rubygems',
+    fixture: 'gems.rb',
+    expected: [
+      {name: 'oj', version: '>= 0', type: 'runtime'},
+      {name: 'rails', version: '= 4.2.0', type: 'runtime'},
+      {name: 'leveldb-ruby', version: '= 0.15', type: 'runtime'},
+      {name: 'spring', version: '>= 0', type: 'development'}
+    ],
+    validManifestPaths: ['gems.rb'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'gemspec',
+    fixture: 'devise.gemspec',
+    expected: [
+      {name: 'warden', version: '~> 1.2.3', type: 'runtime'},
+      {name: 'orm_adapter', version: '~> 0.1', type: 'development'}
+    ],
+    validManifestPaths: ['devise.gemspec', 'foo_meh-bar.gemspec'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'packagist',
     fixture: 'composer.json',
     expected: [
@@ -52,10 +96,14 @@ var platformTests = [
     validManifestPaths: ['composer.lock'],
     invalidManifestPaths: []
   },
+
+
   {
     platform: 'cargo',
     fixture: 'Cargo.toml',
-    expected: [["rustc-serialize", "*"]],
+    expected: [
+      {name: "rustc-serialize", version: "*", type: 'runtime'}
+    ],
     validManifestPaths: ['Cargo.toml'],
     invalidManifestPaths: []
   },
@@ -93,50 +141,6 @@ var platformTests = [
     fixture: 'dub.json',
     expected: [['vibe-d', '~>0.7.22']],
     validManifestPaths: ['dub.json'],
-    invalidManifestPaths: []
-  },
-  {
-    platform: 'rubygems',
-    fixture: 'Gemfile',
-    expected: [
-      ['oj', '>= 0'],
-      ['rails', '= 4.2.0'],
-      ['leveldb-ruby', '= 0.15'],
-      ['spring', '>= 0']
-    ],
-    validManifestPaths: ['Gemfile'],
-    invalidManifestPaths: ['bundle/foo/Gemfile']
-  },
-  {
-    platform: 'rubygemslockfile',
-    fixture: 'Gemfile.lock',
-    expected: [
-      ['CFPropertyList', '2.3.1'],
-      ['actionmailer', '4.2.3']
-    ],
-    validManifestPaths: ['Gemfile.lock'],
-    invalidManifestPaths: []
-  },
-  {
-    platform: 'gemspec',
-    fixture: 'devise.gemspec',
-    expected: [
-      ['warden', '~> 1.2.3'],
-      ['orm_adapter', '~> 0.1']
-    ],
-    validManifestPaths: ['devise.gemspec', 'foo_meh-bar.gemspec'],
-    invalidManifestPaths: []
-  },
-  {
-    platform: 'rubygems',
-    fixture: 'gems.rb',
-    expected: [
-      ['oj', '>= 0'],
-      ['rails', '= 4.2.0'],
-      ['leveldb-ruby', '= 0.15'],
-      ['spring', '>= 0']
-    ],
-    validManifestPaths: ['gems.rb'],
     invalidManifestPaths: []
   },
   {
@@ -190,7 +194,6 @@ describe('Parser', function(){
       var str = fs.readFileSync(__dirname +'/fixtures/'+ test.fixture).toString();
       parsers.parse(test.platform, str)
       .then(function(packages) {
-        console.log('packages', packages);
         test.expected.forEach(function(pkg, i) {
           assert.deepEqual(packages[i], pkg);
         });
