@@ -1156,6 +1156,28 @@
         }
       }
     },
+    "ioredis": {
+      "version": "1.9.0",
+      "from": "ioredis@*",
+      "resolved": "https://registry.npmjs.org/ioredis/-/ioredis-1.9.0.tgz",
+      "dependencies": {
+        "double-ended-queue": {
+          "version": "2.1.0-0",
+          "from": "double-ended-queue@>=2.1.0-0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/double-ended-queue/-/double-ended-queue-2.1.0-0.tgz"
+        },
+        "flexbuffer": {
+          "version": "0.0.6",
+          "from": "flexbuffer@0.0.6",
+          "resolved": "https://registry.npmjs.org/flexbuffer/-/flexbuffer-0.0.6.tgz"
+        },
+        "lodash": {
+          "version": "3.10.1",
+          "from": "lodash@>=3.6.0 <4.0.0",
+          "resolved": "https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz"
+        }
+      }
+    },
     "jade": {
       "version": "1.11.0",
       "from": "jade@>=1.9.2 <2.0.0",

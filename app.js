@@ -39,7 +39,7 @@ app.get('/', router.index);
 app.get('/repos/:owner/:repo', router.repoInfoV1);
 app.get('/v2/repos/:owner/:repo', router.repoInfoV2);
 
-app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
+app.get('/v2/repos/:owner/:repo/pull/:pr', router.prStatus);
 
 // File uploads parser
 //var multer = require('multer');
