@@ -163,6 +163,19 @@ var platformTests = [
     validManifestPaths: ['mix.exs'],
     invalidManifestPaths: []
   },
+  {
+    platform: 'pypi',
+    fixture: 'requirements.txt',
+    expected: [
+      {name: 'Flask', version: '0.8', type: 'runtime'},
+      {name: 'zope.component', version: '4.2.2', type: 'runtime'},
+      {name: 'scikit-learn', version: '0.16.1', type: 'runtime'},
+      {name: 'Beaker', version: '1.6.5', type: 'runtime'}
+    ],
+    validManifestPaths: ['requirements.txt'],
+    invalidManifestPaths: []
+  },
+
 
 
   {
@@ -186,18 +199,6 @@ var platformTests = [
     validManifestPaths: ['dpkg'],
     invalidManifestPaths: []
   },
-  {
-    platform: 'pypi',
-    fixture: 'requirements.txt',
-    expected: [
-      ['Flask', '0.8'],
-      ['zope.component', '4.2.2'],
-      ['scikit-learn', '0.16.1'],
-      ['Beaker', '1.6.5']
-    ],
-    validManifestPaths: ['requirements.txt'],
-    invalidManifestPaths: []
-  }
 
 ];
 
