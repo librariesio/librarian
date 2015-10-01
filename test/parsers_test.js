@@ -142,17 +142,20 @@ var platformTests = [
     validManifestPaths: ['dub.json'],
     invalidManifestPaths: []
   },
-
-
-
   {
     platform: 'pub',
     fixture: 'pubspec.yaml',
-    expected: [['analyzer', '>=0.22.0 <0.25.0']],
+    expected: [
+      {name: 'analyzer', version: '>=0.22.0 <0.25.0', type: 'runtime'},
+      {name: 'args', version: '>=0.12.0 <0.13.0', type: 'runtime'},
+      {name: 'benchmark_harness', version: '>=1.0.0 <2.0.0', type: 'development'},
+      {name: 'guinness', version: '>=0.1.9 <0.2.0', type: 'development'}
+    ],
     validManifestPaths: ['pubspec.yaml'],
     invalidManifestPaths: []
 
   },
+
   {
     platform: 'cocoapods',
     fixture: 'Podfile',
