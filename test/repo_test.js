@@ -1,5 +1,3 @@
-'use strict';
-
 require("babel/register");
 
 var assert = require('assert');

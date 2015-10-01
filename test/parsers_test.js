@@ -1,9 +1,7 @@
-
 require("babel/register");
 
 var assert  = require('assert');
 var fs = require('fs');
-
 var parsers = require('../lib/parsers');
 
 var platformTests = [
@@ -189,33 +187,39 @@ var platformTests = [
     validManifestPaths: ['requirements.txt'],
     invalidManifestPaths: []
   },
-
-
   {
     platform: 'cocoapods',
     fixture: 'Podfile',
-    expected: [['Artsy-UIButtons', '>= 0']],
+    expected: [
+      {name: 'Artsy-UIButtons', version: '>= 0', type: 'runtime'}
+    ],
     validManifestPaths: ['Podfile'],
     invalidManifestPaths: []
   },
   {
     platform: 'cocoapodsLockfile',
     fixture: 'Podfile.lock',
-    expected: [['Alamofire', '2.0.1']],
+    expected: [
+      {name: 'Alamofire', version: '2.0.1', type: 'runtime'}
+    ],
     validManifestPaths: ['Podfile.lock'],
     invalidManifestPaths: []
   },
   {
     platform: 'nuget',
     fixture: 'Project.json',
-    expected: [["Microsoft.AspNet.Server.Kestrel","1.0.0-beta7"]],
+    expected: [
+      {name: "Microsoft.AspNet.Server.Kestrel", version: "1.0.0-beta7", type: 'runtime'}
+    ],
     validManifestPaths: ['Project.json'],
     invalidManifestPaths: []
   },
   {
     platform: 'nugetLockfile',
     fixture: 'Project.lock.json',
-    expected: [["AutoMapper","4.0.0-alpha1"]],
+    expected: [
+      {name: "AutoMapper", version: "4.0.0-alpha1", type: 'runtime'}
+    ],
     validManifestPaths: ['Project.lock.json'],
     invalidManifestPaths: []
   },
@@ -223,12 +227,12 @@ var platformTests = [
     platform: 'julia',
     fixture: 'REQUIRE',
     expected: [
-      ["julia", "0.3"],
-      ["Codecs", ">= 0"]
+      {name: "julia", version: "0.3", type: 'runtime'},
+      {name: "Codecs", version: ">= 0", type: 'runtime'}
     ],
     validManifestPaths: ['REQUIRE'],
     invalidManifestPaths: []
-  },
+  }
 
   // DISABLED
 
