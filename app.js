@@ -35,9 +35,12 @@ app.use(function(req, res, next) {
 
 // Routes
 app.get('/', router.index);
-app.get('/repos/:owner/:repo', router.repoInfo);
-app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 
+// TODO: Deprecate
+app.get('/repos/:owner/:repo', router.repoInfoV1);
+
+app.get('/v2/repos/:owner/:repo', router.repoInfoV2);
+app.get('/v2/repos/:owner/:repo/pull/:pr', router.prStatus);
 
 // File uploads parser
 //var multer = require('multer');
@@ -46,7 +49,8 @@ app.get('/repos/:owner/:repo/pull/:pr', router.prStatus);
 // Error handling
 if (isProduction) app.use(bugsnag.errorHandler);
 app.use(function(err, req, res, next) {
-  console.error('ERR', err);
+  console.error('ERR:', err);
+  console.error('STACK:', err.stack);
   res.status(500).send({error: 'Something went wrong.'});
 });
 
