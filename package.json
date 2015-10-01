@@ -29,6 +29,7 @@
     "js-yaml": "^3.2.7",
     "memwatch-next": "^0.2.6",
     "multer": "^0.1.8",
+    "parse-link-header": "^0.4.1",
     "qs": "^2.4.1",
     "redis": "^0.12.1",
     "request-promise": "^0.4.3",
