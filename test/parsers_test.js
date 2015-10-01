@@ -35,7 +35,7 @@ var platformTests = [
       {name: 'leveldb-ruby', version: '= 0.15', type: 'runtime'},
       {name: 'spring', version: '>= 0', type: 'development'}
     ],
-    validManifestPaths: ['Gemfile'],
+    validManifestPaths: ['Gemfile', 'gems.rb'],
     invalidManifestPaths: ['bundle/foo/Gemfile']
   },
   {
@@ -45,7 +45,7 @@ var platformTests = [
       {name:'CFPropertyList', version: '2.3.1', type: 'runtime'},
       {name:'actionmailer', version: '4.2.3', type: 'runtime'}
     ],
-    validManifestPaths: ['Gemfile.lock'],
+    validManifestPaths: ['Gemfile.lock', 'gems.locked'],
     invalidManifestPaths: []
   },
   {
@@ -84,6 +84,20 @@ var platformTests = [
     fixture: 'composer2.json',
     expected: [],
     validManifestPaths: [],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'nuspec',
+    fixture: 'example.nuspec',
+    expected: [["FubuCore","3.2.0.3001"]],
+    validManifestPaths: ['example.nuspec'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'meteor',
+    fixture: 'versions.json',
+    expected: [["accounts-base", "1.1.2"]],
+    validManifestPaths: ['versions.json'],
     invalidManifestPaths: []
   },
   {
@@ -180,7 +194,7 @@ var platformTests = [
   {
     platform: 'cocoapods',
     fixture: 'Podfile',
-    expected: [['AFNetworking', '~> 1.0']],
+    expected: [['Artsy-UIButtons', '>= 0']],
     validManifestPaths: ['Podfile'],
     invalidManifestPaths: []
   },
@@ -190,8 +204,31 @@ var platformTests = [
     expected: [['Alamofire', '2.0.1']],
     validManifestPaths: ['Podfile.lock'],
     invalidManifestPaths: []
-  }
-
+  },
+  {
+    platform: 'nuget',
+    fixture: 'Project.json',
+    expected: [["Microsoft.AspNet.Server.Kestrel","1.0.0-beta7"]],
+    validManifestPaths: ['Project.json'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'nugetLockfile',
+    fixture: 'Project.lock.json',
+    expected: [["AutoMapper","4.0.0-alpha1"]],
+    validManifestPaths: ['Project.lock.json'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'julia',
+    fixture: 'REQUIRE',
+    expected: [
+      ["julia", "0.3"],
+      ["Codecs", ">= 0"]
+    ],
+    validManifestPaths: ['REQUIRE'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
