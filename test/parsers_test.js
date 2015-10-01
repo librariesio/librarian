@@ -153,8 +153,17 @@ var platformTests = [
     ],
     validManifestPaths: ['pubspec.yaml'],
     invalidManifestPaths: []
-
   },
+  {
+    platform: 'hex',
+    fixture: 'mix.exs',
+    expected: [
+      {name: 'poison', version: '~> 1.3.1', type: 'runtime'}
+    ],
+    validManifestPaths: ['mix.exs'],
+    invalidManifestPaths: []
+  },
+
 
   {
     platform: 'cocoapods',
@@ -175,13 +184,6 @@ var platformTests = [
     fixture: 'dpkg',
     expected: [['accountsservice', '0.6.15-2ubuntu9.6']],
     validManifestPaths: ['dpkg'],
-    invalidManifestPaths: []
-  },
-  {
-    platform: 'hex',
-    fixture: 'mix.exs',
-    expected: [['poison', '~> 1.3.1']],
-    validManifestPaths: ['mix.exs'],
     invalidManifestPaths: []
   },
   {
