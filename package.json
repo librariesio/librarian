@@ -27,6 +27,7 @@
     "ioredis": "^1.9.0",
     "jade": "^1.9.2",
     "js-yaml": "^3.2.7",
+    "memjs": "^0.8.6",
     "memwatch-next": "^0.2.6",
     "multer": "^0.1.8",
     "parse-link-header": "^0.4.1",

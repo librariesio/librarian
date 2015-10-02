@@ -1455,6 +1455,11 @@
         }
       }
     },
+    "memjs": {
+      "version": "0.8.6",
+      "from": "memjs@*",
+      "resolved": "https://registry.npmjs.org/memjs/-/memjs-0.8.6.tgz"
+    },
     "memwatch-next": {
       "version": "0.2.9",
       "from": "memwatch-next@>=0.2.6 <0.3.0",
