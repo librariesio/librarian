@@ -167,6 +167,16 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'clojars',
+    fixture: 'project.clj',
+    expected: [
+      {name: "org.clojure/clojure", version: "1.6.0", type: "runtime"},
+      {name: 'cheshire', version: '5.4.0', type: 'runtime'}
+    ],
+    validManifestPaths: ['project.clj'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'hex',
     fixture: 'mix.exs',
     expected: [
