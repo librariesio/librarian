@@ -23,6 +23,13 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'cpanMetaJSON',
+    fixture: 'META.json',
+    expected: [["English",">= 1.00"]],
+    validManifestPaths: ['META.json'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'npmshrinkwrap',
     fixture: 'npm-shrinkwrap.json',
     expected: [
