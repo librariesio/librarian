@@ -18,14 +18,18 @@ var platformTests = [
   {
     platform: 'cpanMetaYML',
     fixture: 'META.yml',
-    expected: [["Digest::MD5", ">= 0"]],
+    expected: [
+      {name: "Digest::MD5", version: ">= 0", type: 'runtime'}
+    ],
     validManifestPaths: ['META.yml'],
     invalidManifestPaths: []
   },
   {
     platform: 'cpanMetaJSON',
     fixture: 'META.json',
-    expected: [["English",">= 1.00"]],
+    expected: [
+      {name: "English", version: ">= 1.00", type: 'build'}
+    ],
     validManifestPaths: ['META.json'],
     invalidManifestPaths: []
   },
