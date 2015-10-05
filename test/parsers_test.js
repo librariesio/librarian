@@ -16,6 +16,20 @@ var platformTests = [
     invalidManifestPaths: ['node_modules/foo/package.json']
   },
   {
+    platform: 'cpanMetaYML',
+    fixture: 'META.yml',
+    expected: [["Digest::MD5", ">= 0"]],
+    validManifestPaths: ['META.yml'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'cpanMetaJSON',
+    fixture: 'META.json',
+    expected: [["English",">= 1.00"]],
+    validManifestPaths: ['META.json'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'npmshrinkwrap',
     fixture: 'npm-shrinkwrap.json',
     expected: [
