@@ -105,7 +105,9 @@ var platformTests = [
   {
     platform: 'nuspec',
     fixture: 'example.nuspec',
-    expected: [["FubuCore","3.2.0.3001"]],
+    expected: [
+      {name: "FubuCore", version: "3.2.0.3001", type: 'runtime'}
+    ],
     validManifestPaths: ['example.nuspec'],
     invalidManifestPaths: []
   },
