@@ -1,5 +1,3 @@
-require("babel/register");
-
 var assert  = require('assert');
 var fs = require('fs');
 var parsers = require('../lib/parsers');

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node --harmony_destructuring app.js",
-    "test": "mocha"
+    "test": "mocha --harmony_destructuring"
   },
   "author": "Mauro Pompilio",
   "license": "MIT",

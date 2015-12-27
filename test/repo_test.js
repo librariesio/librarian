@@ -1,7 +1,5 @@
-require("babel/register");
-
 var assert = require('assert');
-var GitHub = require('../lib/github');
+var GitHub = require('libhub');
 var Repo = require('../lib/repo');
 var parsers = require('../lib/parsers').parsers;
 var sinon = require('sinon');
