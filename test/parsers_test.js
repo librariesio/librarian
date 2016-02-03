@@ -136,6 +136,15 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'cargolockfile',
+    fixture: 'Cargo.lock',
+    expected: [
+      {name: "advapi32-sys", version: "0.1.2", type: 'runtime'}
+    ],
+    validManifestPaths: ['Cargo.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'elm',
     fixture: 'elm-package.json',
     expected: [
