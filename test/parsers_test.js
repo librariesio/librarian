@@ -85,6 +85,15 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'podspec',
+    fixture: 'example.podspec',
+    expected: [
+      { name: 'CocoaLumberjack', version: '>= 0', type: 'runtime' }
+    ],
+    validManifestPaths: ['devise.podspec', 'foo_meh-bar.podspec'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'packagist',
     fixture: 'composer.json',
     expected: [
