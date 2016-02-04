@@ -203,6 +203,15 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'publock',
+    fixture: 'pubspec.lock',
+    expected: [
+      {name: 'analyzer', version: '0.24.6', type: 'runtime'},
+    ],
+    validManifestPaths: ['pubspec.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'clojars',
     fixture: 'project.clj',
     expected: [
