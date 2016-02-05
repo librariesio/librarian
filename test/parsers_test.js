@@ -287,7 +287,16 @@ var platformTests = [
     ],
     validManifestPaths: ['REQUIRE'],
     invalidManifestPaths: []
-  }
+  },
+  {
+    platform: 'go',
+    fixture: 'Godeps.json',
+    expected: [
+      {name: "github.com/BurntSushi/toml", version: "3883ac1ce943878302255f538fce319d23226223", type: 'runtime'}
+    ],
+    validManifestPaths: ['Godeps/Godeps.json'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
