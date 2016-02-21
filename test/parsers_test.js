@@ -297,6 +297,25 @@ var platformTests = [
     validManifestPaths: ['Godeps/Godeps.json'],
     invalidManifestPaths: []
   },
+  {
+    platform: 'glide',
+    fixture: 'glide.yaml',
+    expected: [
+      {name: "gopkg.in/yaml.v2", version: ">= 0", type: 'runtime'},
+      {name: "github.com/Masterminds/vcs", version: "^1.4.0", type: 'runtime'}
+    ],
+    validManifestPaths: ['glide.yaml'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'glidelockfile',
+    fixture: 'glide.lock',
+    expected: [
+      {name: "github.com/codegangsta/cli", version: "c31a7975863e7810c92e2e288a9ab074f9a88f29", type: 'runtime'}
+    ],
+    validManifestPaths: ['glide.lock'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
