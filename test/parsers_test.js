@@ -316,6 +316,33 @@ var platformTests = [
     validManifestPaths: ['glide.lock'],
     invalidManifestPaths: []
   },
+  {
+    platform: 'carthfile',
+    fixture: 'Carthfile',
+    expected: [
+      { name: 'ReactiveCocoa/ReactiveCocoa', version: '>=2.3.1', type: 'runtime' }
+    ],
+    validManifestPaths: ['Carthfile'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'carthfileprivate',
+    fixture: 'Carthfile.private',
+    expected: [
+      { name: 'Quick/Quick', version: '~>0.9', type: 'development' }
+    ],
+    validManifestPaths: ['Carthfile.private'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'carthfileresolved',
+    fixture: 'Carthfile.resolved',
+    expected: [
+      {name: 'thoughtbot/Argo', version: 'v2.2.0', type: 'runtime'}
+    ],
+    validManifestPaths: ['Carthfile.resolved'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
