@@ -317,30 +317,30 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
-    platform: 'carthfile',
-    fixture: 'Carthfile',
+    platform: 'cartfile',
+    fixture: 'Cartfile',
     expected: [
       { name: 'ReactiveCocoa/ReactiveCocoa', version: '>=2.3.1', type: 'runtime' }
     ],
-    validManifestPaths: ['Carthfile'],
+    validManifestPaths: ['Cartfile'],
     invalidManifestPaths: []
   },
   {
-    platform: 'carthfileprivate',
-    fixture: 'Carthfile.private',
+    platform: 'cartfileprivate',
+    fixture: 'Cartfile.private',
     expected: [
       { name: 'Quick/Quick', version: '~>0.9', type: 'development' }
     ],
-    validManifestPaths: ['Carthfile.private'],
+    validManifestPaths: ['Cartfile.private'],
     invalidManifestPaths: []
   },
   {
-    platform: 'carthfileresolved',
-    fixture: 'Carthfile.resolved',
+    platform: 'cartfileresolved',
+    fixture: 'Cartfile.resolved',
     expected: [
       {name: 'thoughtbot/Argo', version: 'v2.2.0', type: 'runtime'}
     ],
-    validManifestPaths: ['Carthfile.resolved'],
+    validManifestPaths: ['Cartfile.resolved'],
     invalidManifestPaths: []
   },
 
