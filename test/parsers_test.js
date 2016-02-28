@@ -343,6 +343,15 @@ var platformTests = [
     validManifestPaths: ['Cartfile.resolved'],
     invalidManifestPaths: []
   },
+  {
+    platform: 'maven',
+    fixture: 'pom.xml',
+    expected: [
+      {name: 'org.glassfish.jersey.core:jersey-server', version: '2.16', type: 'runtime'}
+    ],
+    validManifestPaths: ['pom.xml'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
