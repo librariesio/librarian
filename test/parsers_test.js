@@ -279,6 +279,15 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'nugetPackages',
+    fixture: 'packages.config',
+    expected: [
+      { name: 'AutoMapper', version: '2.1.267', type: 'runtime' }
+    ],
+    validManifestPaths: ['packages.config'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'julia',
     fixture: 'REQUIRE',
     expected: [
