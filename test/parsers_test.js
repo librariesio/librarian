@@ -352,6 +352,15 @@ var platformTests = [
     validManifestPaths: ['pom.xml'],
     invalidManifestPaths: []
   },
+  {
+    platform: 'ivy',
+    fixture: 'ivy.xml',
+    expected: [
+      {name: 'org.htmlparser:htmlparser', version: '2.1', type: 'runtime'}
+    ],
+    validManifestPaths: ['ivy.xml'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
