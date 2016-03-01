@@ -370,6 +370,28 @@ var platformTests = [
     validManifestPaths: ['ivy.xml'],
     invalidManifestPaths: []
   },
+  {
+    platform: 'shard',
+    fixture: 'shard.yml',
+    expected: [
+      {name: 'frost', version: undefined, type: 'runtime'},
+      {name: 'shards', version: undefined, type: 'runtime'},
+      {name: 'common_mark', version: undefined, type: 'runtime'},
+      {name: 'minitest', version: '>= 0.2.0', type: 'development'}
+    ],
+    validManifestPaths: ['shard.yml'],
+    invalidManifestPaths: []
+  },
+  {
+    platform: 'shardLockfile',
+    fixture: 'shard.lock',
+    expected: [
+      {name: 'common_mark', version: '0.1.0', type: 'runtime'},
+      {name: 'frost', version: '4042fc55a0865df8cbcb9a389527e9557aa8f280', type: 'runtime'}
+    ],
+    validManifestPaths: ['shard.lock'],
+    invalidManifestPaths: []
+  },
 
   // DISABLED
 
