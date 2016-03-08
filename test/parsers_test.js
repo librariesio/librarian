@@ -8,7 +8,9 @@ var platformTests = [
     fixture: 'package.json',
     expected: [
       {name: 'babel', version: '^4.6.6', type: 'runtime'},
-      {name: 'mocha', version: '^2.2.1', type: 'development'}
+      {name: 'mocha', version: '^2.2.1', type: 'development'},
+      {name: 'node-sass', version: '*', type: 'optional'},
+      {name: 'base62', version: '*', type: 'peer'}
     ],
     validManifestPaths: ['package.json'],
     invalidManifestPaths: ['node_modules/foo/package.json']

@@ -14,5 +14,11 @@
   },
   "devDependencies": {
     "mocha": "^2.2.1"
+  },
+  "optionalDependencies": {
+    "node-sass": "*"
+  },
+  "peerDependencies": {
+    "base62": "*"
   }
 }
