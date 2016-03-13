@@ -394,18 +394,7 @@ var platformTests = [
     ],
     validManifestPaths: ['shard.lock'],
     invalidManifestPaths: []
-  },
-
-  // DISABLED
-
-  //{
-  //  platform: 'dpkg',
-  //  fixture: 'dpkg',
-  //  expected: [['accountsservice', '0.6.15-2ubuntu9.6']],
-  //  validManifestPaths: ['dpkg'],
-  //  invalidManifestPaths: []
-  //}
-
+  }
 ];
 
 describe('Parser', function(){
