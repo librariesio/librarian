@@ -1,6 +1,6 @@
-# Libraries CI
+# Librarian
 
-http://ci.libraries.io
+Dependency manifest parsing service for <https://libraries.io>
 
 ## Getting started
 
