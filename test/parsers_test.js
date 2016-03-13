@@ -377,9 +377,9 @@ var platformTests = [
     platform: 'shard',
     fixture: 'shard.yml',
     expected: [
-      {name: 'frost', version: undefined, type: 'runtime'},
-      {name: 'shards', version: undefined, type: 'runtime'},
-      {name: 'common_mark', version: undefined, type: 'runtime'},
+      {name: 'frost', version: '*', type: 'runtime'},
+      {name: 'shards', version: '*', type: 'runtime'},
+      {name: 'common_mark', version: '*', type: 'runtime'},
       {name: 'minitest', version: '>= 0.2.0', type: 'development'}
     ],
     validManifestPaths: ['shard.yml'],
