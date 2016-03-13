@@ -2,13 +2,9 @@
 
 var express      = require('express');
 var bodyParser   = require('body-parser');
-var serve_static = require('serve-static');
-var session      = require('cookie-session');
-var memwatch     = require('memwatch-next');
 var bugsnag      = require('bugsnag');
 var debug        = require('debug')('librarian');
-var router       = require('./lib/router');
-
+var repoInfoV2   = require('./repo-info-v2')
 
 var app = express();
 var isProduction = app.get('env') === 'production';
@@ -21,9 +17,6 @@ if (isProduction) {
 }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.set('view engine', 'jade');
-app.use(serve_static('static'));
-app.use(session({secret: 'teprefieroigualinternacional'}));
 app.disable('x-powered-by');
 
 app.use(function(req, res, next) {
@@ -31,18 +24,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Routes
-app.get('/', router.index);
-
-// TODO: Deprecate
-app.get('/repos/:owner/:repo', router.repoInfoV1);
-
-app.get('/v2/repos/:owner/:repo', router.repoInfoV2);
-app.get('/v2/repos/:owner/:repo/pull/:pr', router.prStatus);
-
-// File uploads parser
-//var multer = require('multer');
-//app.post('/manifests', [multer({dest: './uploads/'}), router.parseManifests]);
+app.get('/v2/repos/:owner/:repo', repoInfoV2);
 
 // Error handling
 if (isProduction) app.use(bugsnag.errorHandler);
@@ -54,14 +36,4 @@ app.use(function(err, req, res, next) {
 
 app.listen(port, function() {
   console.log('Listening on', port);
-
-  memwatch.on('leak', function(info) { 
-    console.log('leak:', info);
-  });
-  
-  //memwatch.on('stats', function(stats) {
-  //  console.log('stats:', stats);
-  //});
-  
-  setInterval(memwatch.gc, 60000);
 });
