@@ -233,6 +233,15 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'hexLockfile',
+    fixture: 'mix.lock',
+    expected: [
+      {name: 'poison', version: '~> 1.3.1', type: 'runtime'}
+    ],
+    validManifestPaths: ['mix.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'pypi',
     fixture: 'requirements.txt',
     expected: [
