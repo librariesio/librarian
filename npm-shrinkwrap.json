@@ -216,7 +216,7 @@
     },
     "express": {
       "version": "4.13.4",
-      "from": "express@>=4.13.3 <5.0.0",
+      "from": "express@>=4.13.4 <5.0.0",
       "resolved": "https://registry.npmjs.org/express/-/express-4.13.4.tgz",
       "dependencies": {
         "qs": {
@@ -432,8 +432,8 @@
       "resolved": "git+https://github.com/librariesio/libhub.git#3da72e14ba7b2684ff49534c810600db71c5df18"
     },
     "librarian-parsers": {
-      "version": "1.0.0",
-      "from": "librarian-parsers@>=1.0.0 <2.0.0"
+      "version": "1.0.1",
+      "from": "librarian-parsers@>=1.0.1 <2.0.0"
     },
     "lodash": {
       "version": "4.6.1",
@@ -688,7 +688,7 @@
     },
     "sinon": {
       "version": "1.17.3",
-      "from": "sinon@>=1.14.1 <2.0.0",
+      "from": "sinon@>=1.17.3 <2.0.0",
       "resolved": "https://registry.npmjs.org/sinon/-/sinon-1.17.3.tgz"
     },
     "sntp": {
