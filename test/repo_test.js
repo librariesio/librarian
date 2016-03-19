@@ -1,7 +1,7 @@
 var assert = require('assert');
 var GitHub = require('libhub');
 var Repo = require('../lib/repo');
-var parsers = require('../lib/parsers').parsers;
+var parsers = require('librarian-parsers').parsers;
 var sinon = require('sinon');
 var payloads = require('./fixtures/github-payloads');
 
@@ -133,7 +133,6 @@ describe('Repo class', function(){
         platform:     parsers.npm.name,
         type:         parsers.npm.type,
         filepath:     EXPECTED_PATH,
-        parserName:   'npm',
         sha:          EXPECTED_SHA,
         dependencies: [
           {name: 'octonode', version: '^0.6.15', type: 'runtime'},
