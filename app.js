@@ -12,7 +12,7 @@ var port = process.env.PORT || 5000;
 
 // Middlewares
 if (isProduction) {
-  bugsnag.register("b9d5d0c5b9ecdcf14731645900d4f5be");
+  bugsnag.register(process.env.BUGSNAG);
   app.use(bugsnag.requestHandler);
 }
 app.use(bodyParser.json());
