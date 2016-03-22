@@ -8,8 +8,8 @@
     "node": "4.2.2"
   },
   "scripts": {
-    "start": "node --harmony_destructuring app.js",
-    "test": "mocha --harmony_destructuring -t 10000"
+    "start": "node app.js",
+    "test": "mocha -t 10000"
   },
   "author": "Mauro Pompilio",
   "license": "MIT",
