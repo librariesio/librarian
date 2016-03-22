@@ -432,8 +432,8 @@
       "resolved": "git+https://github.com/librariesio/libhub.git#3da72e14ba7b2684ff49534c810600db71c5df18"
     },
     "librarian-parsers": {
-      "version": "1.0.1",
-      "from": "librarian-parsers@>=1.0.1 <2.0.0"
+      "version": "1.1.0",
+      "from": "librarian-parsers@>=1.1.0 <2.0.0"
     },
     "lodash": {
       "version": "4.6.1",
