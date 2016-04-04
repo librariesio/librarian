@@ -424,16 +424,16 @@
     "libhub": {
       "version": "0.1.0",
       "from": "git+https://github.com/librariesio/libhub.git",
-      "resolved": "git+https://github.com/librariesio/libhub.git#3da72e14ba7b2684ff49534c810600db71c5df18"
+      "resolved": "git+https://github.com/librariesio/libhub.git#4acf7b23bf6ef19ffe08006db849c469d8e0493b"
     },
     "librarian-parsers": {
       "version": "1.2.1",
       "from": "librarian-parsers@>=1.1.0 <2.0.0"
     },
     "lodash": {
-      "version": "4.7.0",
+      "version": "4.8.1",
       "from": "lodash@>=4.5.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.7.0.tgz"
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.8.1.tgz"
     },
     "lolex": {
       "version": "1.3.2",
