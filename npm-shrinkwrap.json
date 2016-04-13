@@ -427,7 +427,7 @@
       "resolved": "git+https://github.com/librariesio/libhub.git#4acf7b23bf6ef19ffe08006db849c469d8e0493b"
     },
     "librarian-parsers": {
-      "version": "1.2.2",
+      "version": "1.2.3",
       "from": "librarian-parsers@>=1.1.0 <2.0.0"
     },
     "lodash": {
