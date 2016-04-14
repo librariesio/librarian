@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "mocha -t 10000"
+    "test": "mocha"
   },
   "author": "Mauro Pompilio",
   "license": "MIT",
