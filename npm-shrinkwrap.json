@@ -19,7 +19,7 @@
     },
     "argparse": {
       "version": "1.0.7",
-      "from": "argparse@>=1.0.2 <2.0.0",
+      "from": "argparse@>=1.0.7 <2.0.0",
       "resolved": "https://registry.npmjs.org/argparse/-/argparse-1.0.7.tgz"
     },
     "array-flatten": {
@@ -392,9 +392,9 @@
       "resolved": "https://registry.npmjs.org/joi/-/joi-6.10.1.tgz"
     },
     "js-yaml": {
-      "version": "3.5.5",
+      "version": "3.6.0",
       "from": "js-yaml@>=3.5.5 <4.0.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.5.5.tgz"
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.6.0.tgz"
     },
     "jsbn": {
       "version": "0.1.0",
