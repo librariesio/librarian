@@ -424,10 +424,10 @@
     "libhub": {
       "version": "0.1.0",
       "from": "git+https://github.com/librariesio/libhub.git",
-      "resolved": "git+https://github.com/librariesio/libhub.git#4acf7b23bf6ef19ffe08006db849c469d8e0493b"
+      "resolved": "git+https://github.com/librariesio/libhub.git#c70756fef26a7c1e790a563faa142843bc274649"
     },
     "librarian-parsers": {
-      "version": "1.2.4",
+      "version": "1.2.5",
       "from": "librarian-parsers@>=1.1.0 <2.0.0"
     },
     "lodash": {
@@ -630,10 +630,15 @@
       "from": "readable-stream@>=2.0.5 <2.1.0",
       "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz"
     },
+    "readcontrol": {
+      "version": "0.0.2",
+      "from": "librariesio/node-readcontrol",
+      "resolved": "git://github.com/librariesio/node-readcontrol.git#62b3e5c158287d1c7621a0eb1f7e8ab12a1a1e27"
+    },
     "request": {
-      "version": "2.71.0",
+      "version": "2.72.0",
       "from": "request@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/request/-/request-2.71.0.tgz"
+      "resolved": "https://registry.npmjs.org/request/-/request-2.72.0.tgz"
     },
     "request-promise": {
       "version": "2.0.1",
