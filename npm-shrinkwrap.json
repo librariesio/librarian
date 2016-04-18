@@ -427,7 +427,7 @@
       "resolved": "git+https://github.com/librariesio/libhub.git#c70756fef26a7c1e790a563faa142843bc274649"
     },
     "librarian-parsers": {
-      "version": "1.2.5",
+      "version": "1.2.6",
       "from": "librarian-parsers@>=1.1.0 <2.0.0"
     },
     "lodash": {
@@ -631,9 +631,9 @@
       "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz"
     },
     "readcontrol": {
-      "version": "0.0.2",
-      "from": "librariesio/node-readcontrol",
-      "resolved": "git://github.com/librariesio/node-readcontrol.git#62b3e5c158287d1c7621a0eb1f7e8ab12a1a1e27"
+      "version": "1.0.0",
+      "from": "readcontrol@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/readcontrol/-/readcontrol-1.0.0.tgz"
     },
     "request": {
       "version": "2.72.0",
