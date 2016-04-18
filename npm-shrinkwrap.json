@@ -422,9 +422,8 @@
       "resolved": "https://registry.npmjs.org/jsprim/-/jsprim-1.2.2.tgz"
     },
     "libhub": {
-      "version": "0.1.0",
-      "from": "git+https://github.com/librariesio/libhub.git",
-      "resolved": "git+https://github.com/librariesio/libhub.git#c70756fef26a7c1e790a563faa142843bc274649"
+      "version": "1.0.0",
+      "from": "libhub@>=1.0.0 <2.0.0"
     },
     "librarian-parsers": {
       "version": "1.2.6",

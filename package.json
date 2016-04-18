@@ -20,7 +20,7 @@
     "bugsnag": "^1.7.0",
     "debug": "^2.2.0",
     "express": "^4.13.4",
-    "libhub": "https://github.com/librariesio/libhub"
+    "libhub": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^2.4.5",
