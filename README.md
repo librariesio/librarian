@@ -38,4 +38,4 @@ Report Issues/Feature requests on [GitHub Issues](http://github.com/librariesio/
 
 ## License
 
-Copyright (c) 2015 Andrew Nesbitt, Licensed under GNU Affero General Public License. See [LICENSE](https://github.com/librariesio/librarian/blob/master/LICENSE.txt) for details.
+Copyright (c) 2016 Andrew Nesbitt, Licensed under GNU Affero General Public License. See [LICENSE](https://github.com/librariesio/librarian/blob/master/LICENSE.txt) for details.
