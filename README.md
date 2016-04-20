@@ -1,5 +1,5 @@
 # [Librarian](https://libraries.io/github/librariesio/librarian)
-[![Build Status](https://circleci.com/gh/librariesio/librarian.svg?style=shield)](https://circleci.com/gh/librariesio/librarian)
+[![Build Status](https://travis-ci.org/librariesio/librarian.svg?branch=master)](https://travis-ci.org/librariesio/librarian)
 [![Dependency Status](https://david-dm.org/librariesio/librarian.svg?theme=shields.io)](https://david-dm.org/librariesio/librarian)
 [![devDependency Status](https://david-dm.org/librariesio/librarian/dev-status.svg?theme=shields.io)](https://david-dm.org/librariesio/librarian#info=devDependencies)
 [![Gitter chat](http://img.shields.io/badge/gitter-librariesio/support-brightgreen.svg)](https://gitter.im/librariesio/support)
