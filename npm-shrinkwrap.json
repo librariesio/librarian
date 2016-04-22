@@ -139,7 +139,7 @@
     },
     "dashdash": {
       "version": "1.13.0",
-      "from": "dashdash@>=1.10.1 <2.0.0",
+      "from": "dashdash@>=1.12.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/dashdash/-/dashdash-1.13.0.tgz",
       "dependencies": {
         "assert-plus": {
@@ -175,9 +175,16 @@
       "resolved": "https://registry.npmjs.org/diff/-/diff-1.4.0.tgz"
     },
     "ecc-jsbn": {
-      "version": "0.1.1",
-      "from": "ecc-jsbn@>=0.0.1 <1.0.0",
-      "resolved": "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz"
+      "version": "0.0.1",
+      "from": "ecc-jsbn@>=0.0.1 <0.1.0",
+      "resolved": "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.0.1.tgz",
+      "dependencies": {
+        "jsbn": {
+          "version": "0.0.0",
+          "from": "git+https://github.com/rynomad/jsbn.git",
+          "resolved": "git+https://github.com/rynomad/jsbn.git#bb522b0124f75424f89d49446c40a87111942c7b"
+        }
+      }
     },
     "ee-first": {
       "version": "1.1.1",
@@ -265,6 +272,18 @@
       "version": "1.2.0",
       "from": "generate-object-property@>=1.1.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/generate-object-property/-/generate-object-property-1.2.0.tgz"
+    },
+    "getpass": {
+      "version": "0.1.5",
+      "from": "getpass@>=0.1.1 <0.2.0",
+      "resolved": "https://registry.npmjs.org/getpass/-/getpass-0.1.5.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://registry.npmjs.org/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
     },
     "glob": {
       "version": "3.2.3",
@@ -662,9 +681,16 @@
       "resolved": "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
     },
     "sshpk": {
-      "version": "1.7.4",
+      "version": "1.8.1",
       "from": "sshpk@>=1.7.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/sshpk/-/sshpk-1.7.4.tgz"
+      "resolved": "https://registry.npmjs.org/sshpk/-/sshpk-1.8.1.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://registry.npmjs.org/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
     },
     "stack-trace": {
       "version": "0.0.9",
@@ -712,9 +738,9 @@
       "resolved": "https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.4.2.tgz"
     },
     "tweetnacl": {
-      "version": "0.14.3",
-      "from": "tweetnacl@>=0.13.0 <1.0.0",
-      "resolved": "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.3.tgz"
+      "version": "0.13.3",
+      "from": "tweetnacl@>=0.13.0 <0.14.0",
+      "resolved": "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.13.3.tgz"
     },
     "type-is": {
       "version": "1.6.12",
