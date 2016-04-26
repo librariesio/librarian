@@ -175,16 +175,9 @@
       "resolved": "https://registry.npmjs.org/diff/-/diff-1.4.0.tgz"
     },
     "ecc-jsbn": {
-      "version": "0.0.1",
-      "from": "ecc-jsbn@>=0.0.1 <0.1.0",
-      "resolved": "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.0.1.tgz",
-      "dependencies": {
-        "jsbn": {
-          "version": "0.0.0",
-          "from": "git+https://github.com/rynomad/jsbn.git",
-          "resolved": "git+https://github.com/rynomad/jsbn.git#bb522b0124f75424f89d49446c40a87111942c7b"
-        }
-      }
+      "version": "0.1.1",
+      "from": "ecc-jsbn@>=0.1.1 <0.2.0",
+      "resolved": "https://registry.npmjs.org/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz"
     },
     "ee-first": {
       "version": "1.1.1",
@@ -681,9 +674,9 @@
       "resolved": "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
     },
     "sshpk": {
-      "version": "1.8.1",
+      "version": "1.8.2",
       "from": "sshpk@>=1.7.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/sshpk/-/sshpk-1.8.1.tgz",
+      "resolved": "https://registry.npmjs.org/sshpk/-/sshpk-1.8.2.tgz",
       "dependencies": {
         "assert-plus": {
           "version": "1.0.0",
