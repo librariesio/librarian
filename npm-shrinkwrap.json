@@ -659,9 +659,9 @@
       "resolved": "https://registry.npmjs.org/sigmund/-/sigmund-1.0.1.tgz"
     },
     "sinon": {
-      "version": "1.17.3",
+      "version": "1.17.4",
       "from": "sinon@>=1.17.3 <2.0.0",
-      "resolved": "https://registry.npmjs.org/sinon/-/sinon-1.17.3.tgz"
+      "resolved": "https://registry.npmjs.org/sinon/-/sinon-1.17.4.tgz"
     },
     "sntp": {
       "version": "1.0.9",
