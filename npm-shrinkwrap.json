@@ -423,7 +423,7 @@
       "from": "libhub@>=1.0.0 <2.0.0"
     },
     "librarian-parsers": {
-      "version": "1.2.8",
+      "version": "1.2.9",
       "from": "librarian-parsers@>=1.1.0 <2.0.0"
     },
     "lodash": {
