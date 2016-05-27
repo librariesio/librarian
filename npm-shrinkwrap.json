@@ -481,9 +481,9 @@
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
     },
     "mocha": {
-      "version": "2.5.2",
+      "version": "2.5.3",
       "from": "mocha@>=2.4.5 <3.0.0",
-      "resolved": "https://registry.npmjs.org/mocha/-/mocha-2.5.2.tgz",
+      "resolved": "https://registry.npmjs.org/mocha/-/mocha-2.5.3.tgz",
       "dependencies": {
         "commander": {
           "version": "2.3.0",
