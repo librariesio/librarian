@@ -4,7 +4,7 @@
   "dependencies": {
     "@request/promise-core": {
       "version": "1.0.0",
-      "from": "@request/promise-core@>=1.0.0 <2.0.0",
+      "from": "@request/promise-core@1.0.0",
       "resolved": "https://registry.npmjs.com/@request/promise-core/-/promise-core-1.0.0.tgz"
     },
     "accepts": {
@@ -437,7 +437,7 @@
     },
     "librarian-parsers": {
       "version": "1.5.1",
-      "from": "librarian-parsers@>=1.1.0 <2.0.0",
+      "from": "librarian-parsers@>=1.5.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/librarian-parsers/-/librarian-parsers-1.5.1.tgz"
     },
     "lodash": {
@@ -618,9 +618,9 @@
       "resolved": "https://registry.npmjs.org/request/-/request-2.73.0.tgz"
     },
     "request-promise": {
-      "version": "4.0.0",
+      "version": "4.0.1",
       "from": "request-promise@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.com/request-promise/-/request-promise-4.0.0.tgz"
+      "resolved": "https://registry.npmjs.com/request-promise/-/request-promise-4.0.1.tgz"
     },
     "samsam": {
       "version": "1.1.2",
