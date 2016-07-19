@@ -437,7 +437,7 @@
     },
     "librarian-parsers": {
       "version": "1.5.1",
-      "from": "librarian-parsers@>=1.5.0 <2.0.0",
+      "from": "librarian-parsers@>=1.5.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/librarian-parsers/-/librarian-parsers-1.5.1.tgz"
     },
     "lodash": {
@@ -618,9 +618,9 @@
       "resolved": "https://registry.npmjs.org/request/-/request-2.73.0.tgz"
     },
     "request-promise": {
-      "version": "4.0.1",
+      "version": "4.0.2",
       "from": "request-promise@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.com/request-promise/-/request-promise-4.0.1.tgz"
+      "resolved": "https://registry.npmjs.com/request-promise/-/request-promise-4.0.2.tgz"
     },
     "samsam": {
       "version": "1.1.2",
@@ -690,9 +690,9 @@
       "resolved": "https://registry.npmjs.org/statuses/-/statuses-1.3.0.tgz"
     },
     "stealthy-require": {
-      "version": "0.1.0",
-      "from": "stealthy-require@>=0.1.0 <0.2.0",
-      "resolved": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-0.1.0.tgz"
+      "version": "1.0.0",
+      "from": "stealthy-require@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.com/stealthy-require/-/stealthy-require-1.0.0.tgz"
     },
     "string_decoder": {
       "version": "0.10.31",
