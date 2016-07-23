@@ -613,9 +613,9 @@
       "resolved": "https://registry.npmjs.org/readcontrol/-/readcontrol-1.0.0.tgz"
     },
     "request": {
-      "version": "2.73.0",
+      "version": "2.74.0",
       "from": "request@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/request/-/request-2.73.0.tgz"
+      "resolved": "https://registry.npmjs.org/request/-/request-2.74.0.tgz"
     },
     "request-promise": {
       "version": "4.0.2",
@@ -725,9 +725,9 @@
       "resolved": "https://registry.npmjs.org/toml/-/toml-2.3.0.tgz"
     },
     "tough-cookie": {
-      "version": "2.2.2",
-      "from": "tough-cookie@>=2.2.0 <2.3.0",
-      "resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.2.2.tgz"
+      "version": "2.3.0",
+      "from": "tough-cookie@>=2.3.0 <2.4.0",
+      "resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.0.tgz"
     },
     "tunnel-agent": {
       "version": "0.4.3",
