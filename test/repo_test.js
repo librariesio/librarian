@@ -35,17 +35,15 @@ describe('Repo class', function(){
     EXPECTED_SHA  = '5dc0f3906430d87bfe001089e2280b9ee4ac24c5';
   });
 
-  it('should fetch default_branch HEAD', function(done) {
+  it('should fetch default_branch HEAD', function() {
     var repo = new Repo('malditogeek', 'hooks', GH);
     return repo.fetchDefaultBranch()
     .then(function(sha) {
       assert.equal(sha, '9611b058b6aaa0481eb77d504f9141f06e9b52ea', "Diff sha");
     })
-    .then(done)
-    .catch(done);
   });
 
-  it('should find manifests at a given SHA', function(done) {
+  it('should find manifests at a given SHA', function() {
     var repo = new Repo('malditogeek', 'hooks', GH);
 
     var expected = [
@@ -60,11 +58,9 @@ describe('Repo class', function(){
     .then(function(manifests) {
       assert.deepEqual(manifests, expected, "Manifests don't match");
     })
-    .then(done)
-    .catch(done);
   });
 
-  it('should fetch blobs given a manifest', function(done) {
+  it('should fetch blobs given a manifest', function() {
 
     var input = [
       {
@@ -88,11 +84,9 @@ describe('Repo class', function(){
     .then(function(blobs) {
       assert.deepEqual(blobs, expected, "Blobs don't match");
     })
-    .then(done)
-    .catch(done);
   });
 
-  it('should be able to parse blobs', function(done) {
+  it('should be able to parse blobs', function() {
 
     var input = [
       {
@@ -122,11 +116,9 @@ describe('Repo class', function(){
     .then(function(parsed) {
       assert.deepEqual(parsed, expected, "Deps don't match");
     })
-    .then(done)
-    .catch(done);
   });
 
-  it('should find dependencies', function(done) {
+  it('should find dependencies', function() {
 
     var expected = [
       {
@@ -146,18 +138,14 @@ describe('Repo class', function(){
     .then(function(dependencies) {
       assert.deepEqual(dependencies, expected, "Deps don't match");
     })
-    .then(done)
-    .catch(done);
   });
 
-  it('should find metadata', function(done) {
+  it('should find metadata', function() {
     var repo = new Repo('malditogeek', 'hooks', GH);
     return repo.findMetadata()
     .then(function(metadata) {
       assert.deepEqual(Object.keys(metadata), ['readme'], "Missing metadata");
     })
-    .then(done)
-    .catch(done);
   });
 
 
