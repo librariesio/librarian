@@ -317,9 +317,9 @@
       "resolved": "https://registry.npmjs.org/graceful-readlink/-/graceful-readlink-1.0.1.tgz"
     },
     "gradle-to-js": {
-      "version": "0.1.0",
+      "version": "0.1.1",
       "from": "gradle-to-js@>=0.1.0 <0.2.0",
-      "resolved": "https://registry.npmjs.org/gradle-to-js/-/gradle-to-js-0.1.0.tgz",
+      "resolved": "https://registry.npmjs.org/gradle-to-js/-/gradle-to-js-0.1.1.tgz",
       "dependencies": {
         "bluebird": {
           "version": "3.3.5",
@@ -564,9 +564,9 @@
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
     },
     "mocha": {
-      "version": "3.0.1",
+      "version": "3.0.2",
       "from": "mocha@>=3.0.0 <4.0.0",
-      "resolved": "https://registry.npmjs.org/mocha/-/mocha-3.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/mocha/-/mocha-3.0.2.tgz",
       "dependencies": {
         "supports-color": {
           "version": "3.1.2",
