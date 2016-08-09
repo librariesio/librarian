@@ -459,9 +459,9 @@
       "resolved": "https://registry.npmjs.org/librarian-parsers/-/librarian-parsers-2.0.1.tgz"
     },
     "lodash": {
-      "version": "4.14.1",
+      "version": "4.14.2",
       "from": "lodash@>=4.13.1 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.14.1.tgz"
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.14.2.tgz"
     },
     "lodash._baseassign": {
       "version": "3.2.0",
@@ -544,9 +544,9 @@
       "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.1.11.tgz"
     },
     "minimatch": {
-      "version": "3.0.2",
+      "version": "3.0.3",
       "from": "minimatch@>=3.0.2 <4.0.0",
-      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.2.tgz"
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz"
     },
     "minimist": {
       "version": "0.0.8",
