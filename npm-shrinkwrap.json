@@ -454,9 +454,9 @@
       "resolved": "https://registry.npmjs.org/libhub/-/libhub-1.0.2.tgz"
     },
     "librarian-parsers": {
-      "version": "2.0.2",
+      "version": "2.0.3",
       "from": "librarian-parsers@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/librarian-parsers/-/librarian-parsers-2.0.2.tgz"
+      "resolved": "https://registry.npmjs.org/librarian-parsers/-/librarian-parsers-2.0.3.tgz"
     },
     "lodash": {
       "version": "4.14.2",
