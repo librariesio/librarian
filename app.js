@@ -1,7 +1,6 @@
 var express      = require('express');
 var bodyParser   = require('body-parser');
 var bugsnag      = require('bugsnag');
-var debug        = require('debug')('librarian');
 var repoInfoV2   = require('./lib/router/repo-info-v2')
 
 var app = express();
