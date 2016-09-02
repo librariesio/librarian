@@ -80,9 +80,9 @@
       "resolved": "https://registry.npmjs.org/bl/-/bl-1.1.2.tgz"
     },
     "bluebird": {
-      "version": "3.4.5",
+      "version": "3.4.6",
       "from": "bluebird@>=3.3.4 <4.0.0",
-      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.5.tgz"
+      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.6.tgz"
     },
     "body-parser": {
       "version": "1.15.2",
