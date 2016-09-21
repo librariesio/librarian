@@ -471,9 +471,9 @@
       "resolved": "https://registry.npmjs.org/librarian-parsers/-/librarian-parsers-2.0.3.tgz"
     },
     "lodash": {
-      "version": "4.16.0",
+      "version": "4.16.1",
       "from": "lodash@>=4.13.1 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.16.0.tgz"
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.16.1.tgz"
     },
     "lodash._baseassign": {
       "version": "3.2.0",
