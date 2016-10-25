@@ -10,7 +10,8 @@ Dependency manifest parsing web service for [Libraries.io](https://libraries.io)
 
 ```bash
 git clone https://github.com/librariesio/librarian.git
-npm install
+npm install -g yarn
+yarn install
 ```
 
 ## Getting started
