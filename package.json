@@ -14,12 +14,12 @@
   "author": "Mauro Pompilio",
   "license": "MIT",
   "dependencies": {
-    "librarian-parsers": "^2.0.0",
     "bluebird": "^3.3.4",
     "body-parser": "^1.15.0",
     "bugsnag": "^1.7.0",
     "express": "^4.13.4",
-    "libhub": "^1.0.0"
+    "libhub": "^1.0.0",
+    "librarian-parsers": "^2.0.0"
   },
   "devDependencies": {
     "mocha": "^3.0.0",
