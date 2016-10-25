@@ -67,11 +67,6 @@
       "from": "bcrypt-pbkdf@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.0.tgz"
     },
-    "bl": {
-      "version": "1.1.2",
-      "from": "bl@>=1.1.2 <1.2.0",
-      "resolved": "https://registry.npmjs.org/bl/-/bl-1.1.2.tgz"
-    },
     "bluebird": {
       "version": "3.4.6",
       "from": "bluebird@>=3.3.4 <4.0.0",
@@ -151,11 +146,6 @@
       "version": "1.0.6",
       "from": "cookie-signature@1.0.6",
       "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz"
-    },
-    "core-util-is": {
-      "version": "1.0.2",
-      "from": "core-util-is@>=1.0.0 <1.1.0",
-      "resolved": "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz"
     },
     "cryptiles": {
       "version": "2.0.5",
@@ -260,9 +250,9 @@
       "resolved": "https://registry.npmjs.org/forever-agent/-/forever-agent-0.6.1.tgz"
     },
     "form-data": {
-      "version": "2.0.0",
-      "from": "form-data@>=2.0.0 <2.1.0",
-      "resolved": "https://registry.npmjs.org/form-data/-/form-data-2.0.0.tgz"
+      "version": "2.1.1",
+      "from": "form-data@>=2.1.1 <2.2.0",
+      "resolved": "https://registry.npmjs.org/form-data/-/form-data-2.1.1.tgz"
     },
     "formatio": {
       "version": "1.1.1",
@@ -402,11 +392,6 @@
       "version": "1.0.0",
       "from": "is-typedarray@>=1.0.0 <1.1.0",
       "resolved": "https://registry.npmjs.org/is-typedarray/-/is-typedarray-1.0.0.tgz"
-    },
-    "isarray": {
-      "version": "1.0.0",
-      "from": "isarray@>=1.0.0 <1.1.0",
-      "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz"
     },
     "isstream": {
       "version": "0.1.2",
@@ -635,11 +620,6 @@
       "from": "pinkie-promise@>=2.0.0 <3.0.0",
       "resolved": "https://registry.npmjs.org/pinkie-promise/-/pinkie-promise-2.0.1.tgz"
     },
-    "process-nextick-args": {
-      "version": "1.0.7",
-      "from": "process-nextick-args@>=1.0.6 <1.1.0",
-      "resolved": "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.7.tgz"
-    },
     "promise": {
       "version": "7.1.1",
       "from": "promise@>=7.0.0 <8.0.0",
@@ -665,20 +645,22 @@
       "from": "raw-body@>=2.1.7 <2.2.0",
       "resolved": "https://registry.npmjs.org/raw-body/-/raw-body-2.1.7.tgz"
     },
-    "readable-stream": {
-      "version": "2.0.6",
-      "from": "readable-stream@>=2.0.5 <2.1.0",
-      "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz"
-    },
     "readcontrol": {
       "version": "1.0.0",
       "from": "readcontrol@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/readcontrol/-/readcontrol-1.0.0.tgz"
     },
     "request": {
-      "version": "2.75.0",
+      "version": "2.76.0",
       "from": "request@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/request/-/request-2.75.0.tgz"
+      "resolved": "https://registry.npmjs.org/request/-/request-2.76.0.tgz",
+      "dependencies": {
+        "qs": {
+          "version": "6.3.0",
+          "from": "qs@>=6.3.0 <6.4.0",
+          "resolved": "https://registry.npmjs.org/qs/-/qs-6.3.0.tgz"
+        }
+      }
     },
     "request-promise": {
       "version": "4.1.1",
@@ -757,11 +739,6 @@
       "from": "stealthy-require@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.com/stealthy-require/-/stealthy-require-1.0.0.tgz"
     },
-    "string_decoder": {
-      "version": "0.10.31",
-      "from": "string_decoder@>=0.10.0 <0.11.0",
-      "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz"
-    },
     "stringstream": {
       "version": "0.0.5",
       "from": "stringstream@>=0.0.4 <0.1.0",
@@ -811,11 +788,6 @@
       "version": "0.10.3",
       "from": "util@>=0.10.3 <1.0.0",
       "resolved": "https://registry.npmjs.org/util/-/util-0.10.3.tgz"
-    },
-    "util-deprecate": {
-      "version": "1.0.2",
-      "from": "util-deprecate@>=1.0.1 <1.1.0",
-      "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
     },
     "utils-merge": {
       "version": "1.0.0",
