@@ -2,6 +2,7 @@ var express      = require('express');
 var bodyParser   = require('body-parser');
 var bugsnag      = require('bugsnag');
 var repoInfoV2   = require('./lib/router/repo-info-v2')
+var parseFile   = require('./lib/router/parse_file')
 
 var app = express();
 var isProduction = app.get('env') === 'production';
@@ -22,6 +23,8 @@ app.use(function(req, res, next) {
 });
 
 app.get('/v2/repos/:owner/:repo', repoInfoV2);
+
+app.post('/v2/parse_file', parseFile)
 
 // Error handling
 if (isProduction) app.use(bugsnag.errorHandler);
