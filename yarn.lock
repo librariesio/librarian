@@ -775,8 +775,8 @@ libhub@^1.0.0:
     request-promise "^4.0.0"
 
 librarian-parsers@^2.0.0:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/librarian-parsers/-/librarian-parsers-2.1.2.tgz#a60281d9999a07e8fe1946c0956132a408948023"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/librarian-parsers/-/librarian-parsers-2.2.0.tgz#be423c52783a1c6fea1535681136434e0ccc8121"
   dependencies:
     bluebird "^3.3.4"
     gradle-to-js "^0.1.0"
