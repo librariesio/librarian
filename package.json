@@ -19,7 +19,7 @@
     "bugsnag": "^1.7.0",
     "express": "^4.13.4",
     "libhub": "^1.0.0",
-    "librarian-parsers": "^2.0.0"
+    "librarian-parsers": "^2.2.1"
   },
   "devDependencies": {
     "mocha": "^3.0.0",
