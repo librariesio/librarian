@@ -1436,8 +1436,8 @@ tmp@^0.0.29:
     os-tmpdir "~1.0.1"
 
 toml@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/toml/-/toml-2.3.0.tgz#ee1b84beb08e2a813dd83bf2fc0d48470f0d727e"
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/toml/-/toml-2.3.1.tgz#f1c02ff327b586f3ac97d8e75eacf26b1daf0b06"
 
 tough-cookie@~2.3.0:
   version "2.3.2"
