@@ -1543,8 +1543,8 @@ xtend@^4.0.0, xtend@~4.0.0:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
 yarn@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-0.18.0.tgz#453d865fd16dbbcbdc1b0785e70155278e7650c9"
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-0.18.1.tgz#02e2efee30255a60b6df4b5b2c7da9c1fd4c8e83"
   dependencies:
     babel-runtime "^6.0.0"
     bytes "^2.4.0"
