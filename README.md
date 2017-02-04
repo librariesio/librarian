@@ -3,6 +3,8 @@
 [![Dependency Status](https://david-dm.org/librariesio/librarian.svg?theme=shields.io)](https://david-dm.org/librariesio/librarian)
 [![devDependency Status](https://david-dm.org/librariesio/librarian/dev-status.svg?theme=shields.io)](https://david-dm.org/librariesio/librarian#info=devDependencies)
 [![Gitter chat](http://img.shields.io/badge/gitter-librariesio/support-brightgreen.svg)](https://gitter.im/librariesio/support)
+[![license](https://img.shields.io/github/license/librariesio/librarian.svg)](https://github.com/librariesio/librarian/blob/master/LICENSE.txt)
+[![Docker Automated build](https://img.shields.io/docker/automated/librariesio/librarian.svg)](https://hub.docker.com/r/librariesio/librarian/)
 
 Dependency manifest parsing web service for [Libraries.io](https://libraries.io)
 
