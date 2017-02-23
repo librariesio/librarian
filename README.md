@@ -6,6 +6,8 @@
 [![license](https://img.shields.io/github/license/librariesio/librarian.svg)](https://github.com/librariesio/librarian/blob/master/LICENSE.txt)
 [![Docker Automated build](https://img.shields.io/docker/automated/librariesio/librarian.svg)](https://hub.docker.com/r/librariesio/librarian/)
 
+:warning: This repository has been replaced with [Bibliothecary](https://github.com/librariesio/bibliothecary) and will not be updated anymore :warning:
+
 Dependency manifest parsing web service for [Libraries.io](https://libraries.io)
 
 ## Install
